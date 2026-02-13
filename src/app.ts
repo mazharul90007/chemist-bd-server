@@ -3,16 +3,25 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import status from "http-status";
 import router from "./app/routes";
+import { toNodeHandler } from "better-auth/node";
+import { auth } from "./lib/auth";
 
 // import globalErrorHandler from "./app/middlewares/globalErrorHandler";
 
 const app: Application = express();
 
 //parser
-app.use(cors());
+app.use(
+  cors({
+    origin: process.env.APP_URL || "http://localhost:3000",
+    credentials: true,
+  }),
+);
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.all("/api/auth/*splat", toNodeHandler(auth));
 
 app.use("/api/v1", router);
 

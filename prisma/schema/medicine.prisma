@@ -1,0 +1,37 @@
+model Medicine {
+    id           String           @id @default(uuid())
+    sellerId     String
+    seller       User             @relation(fields: [sellerId], references: [id])
+    generic_name String?
+    strength     String?
+    company      String
+    quantity     Int
+    price        Int
+    Indications  String?
+    Pharmacology String?
+    type         MedicineType     @default(OTHER)
+    category     MedicineCategory @default(OTHER)
+    dosage       String?
+    side_effects String?
+    warnings     String?
+    createdAt    DateTime         @default(now())
+    updatedAt    DateTime         @updatedAt
+    reviews      Review[]
+    orderItems   OrderItem[]
+
+    @@index([category, company, price])
+    @@map("medicines")
+}
+
+enum MedicineType {
+    SYRUP
+    TABLET
+    CAPSULE
+    OTHER
+}
+
+enum MedicineCategory {
+    ALLOPATHIC
+    HERBAL
+    OTHER
+}
