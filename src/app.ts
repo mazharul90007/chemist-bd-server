@@ -5,8 +5,8 @@ import status from "http-status";
 import router from "./app/routes";
 import { toNodeHandler } from "better-auth/node";
 import { auth } from "./lib/auth";
-
-// import globalErrorHandler from "./app/middlewares/globalErrorHandler";
+import { notFound } from "./app/middlewares/notFound";
+import globalErrorHandler from "./app/middlewares/globalErrorHandler";
 
 const app: Application = express();
 
@@ -29,8 +29,9 @@ app.get("/", (req: Request, res: Response) => {
   res.send("CHEMISTBD server is running");
 });
 
+app.use(notFound);
 // Global error handler
-// app.use(globalErrorHandler);
+app.use(globalErrorHandler);
 
 app.use((req: Request, res: Response, next: NextFunction) => {
   res.status(status.NOT_FOUND).json({
