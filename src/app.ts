@@ -2,11 +2,11 @@ import express, { Application, NextFunction, Request, Response } from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import status from "http-status";
-import router from "./app/routes";
 import { toNodeHandler } from "better-auth/node";
 import { auth } from "./lib/auth";
 import { notFound } from "./app/middlewares/notFound";
 import globalErrorHandler from "./app/middlewares/globalErrorHandler";
+import router from "./app/routes";
 
 const app: Application = express();
 
