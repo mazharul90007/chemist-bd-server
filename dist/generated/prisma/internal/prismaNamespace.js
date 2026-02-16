@@ -72,6 +72,7 @@ export const ModelName = {
     Account: 'Account',
     Verification: 'Verification',
     Medicine: 'Medicine',
+    Category: 'Category',
     Order: 'Order',
     OrderItem: 'OrderItem',
     Review: 'Review'
@@ -140,10 +141,18 @@ export const MedicineScalarFieldEnum = {
     Indications: 'Indications',
     Pharmacology: 'Pharmacology',
     type: 'type',
-    category: 'category',
+    categoryId: 'categoryId',
     dosage: 'dosage',
     side_effects: 'side_effects',
     warnings: 'warnings',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+};
+export const CategoryScalarFieldEnum = {
+    id: 'id',
+    categoryName: 'categoryName',
+    categoryDetails: 'categoryDetails',
+    categoryStatus: 'categoryStatus',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
 };

@@ -45,6 +45,11 @@ export type Verification = Prisma.VerificationModel;
  */
 export type Medicine = Prisma.MedicineModel;
 /**
+ * Model Category
+ *
+ */
+export type Category = Prisma.CategoryModel;
+/**
  * Model Order
  *
  */

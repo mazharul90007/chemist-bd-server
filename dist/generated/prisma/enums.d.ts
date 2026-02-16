@@ -17,12 +17,12 @@ export declare const MedicineType: {
     readonly OTHER: "OTHER";
 };
 export type MedicineType = (typeof MedicineType)[keyof typeof MedicineType];
-export declare const MedicineCategory: {
-    readonly ALLOPATHIC: "ALLOPATHIC";
-    readonly HERBAL: "HERBAL";
-    readonly OTHER: "OTHER";
+export declare const CategoryStatus: {
+    readonly ACTIVE: "ACTIVE";
+    readonly BLOCKED: "BLOCKED";
+    readonly DELETED: "DELETED";
 };
-export type MedicineCategory = (typeof MedicineCategory)[keyof typeof MedicineCategory];
+export type CategoryStatus = (typeof CategoryStatus)[keyof typeof CategoryStatus];
 export declare const PaymentStatus: {
     readonly PAID: "PAID";
     readonly UNPAID: "UNPAID";

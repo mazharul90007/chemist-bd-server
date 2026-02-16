@@ -23,10 +23,10 @@ export const MedicineType = {
     CAPSULE: 'CAPSULE',
     OTHER: 'OTHER'
 };
-export const MedicineCategory = {
-    ALLOPATHIC: 'ALLOPATHIC',
-    HERBAL: 'HERBAL',
-    OTHER: 'OTHER'
+export const CategoryStatus = {
+    ACTIVE: 'ACTIVE',
+    BLOCKED: 'BLOCKED',
+    DELETED: 'DELETED'
 };
 export const PaymentStatus = {
     PAID: 'PAID',

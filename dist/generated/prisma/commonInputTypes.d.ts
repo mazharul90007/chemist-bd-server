@@ -169,12 +169,6 @@ export type EnumMedicineTypeFilter<$PrismaModel = never> = {
     notIn?: $Enums.MedicineType[] | Prisma.ListEnumMedicineTypeFieldRefInput<$PrismaModel>;
     not?: Prisma.NestedEnumMedicineTypeFilter<$PrismaModel> | $Enums.MedicineType;
 };
-export type EnumMedicineCategoryFilter<$PrismaModel = never> = {
-    equals?: $Enums.MedicineCategory | Prisma.EnumMedicineCategoryFieldRefInput<$PrismaModel>;
-    in?: $Enums.MedicineCategory[] | Prisma.ListEnumMedicineCategoryFieldRefInput<$PrismaModel>;
-    notIn?: $Enums.MedicineCategory[] | Prisma.ListEnumMedicineCategoryFieldRefInput<$PrismaModel>;
-    not?: Prisma.NestedEnumMedicineCategoryFilter<$PrismaModel> | $Enums.MedicineCategory;
-};
 export type IntWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | Prisma.IntFieldRefInput<$PrismaModel>;
     in?: number[] | Prisma.ListIntFieldRefInput<$PrismaModel>;
@@ -199,14 +193,20 @@ export type EnumMedicineTypeWithAggregatesFilter<$PrismaModel = never> = {
     _min?: Prisma.NestedEnumMedicineTypeFilter<$PrismaModel>;
     _max?: Prisma.NestedEnumMedicineTypeFilter<$PrismaModel>;
 };
-export type EnumMedicineCategoryWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: $Enums.MedicineCategory | Prisma.EnumMedicineCategoryFieldRefInput<$PrismaModel>;
-    in?: $Enums.MedicineCategory[] | Prisma.ListEnumMedicineCategoryFieldRefInput<$PrismaModel>;
-    notIn?: $Enums.MedicineCategory[] | Prisma.ListEnumMedicineCategoryFieldRefInput<$PrismaModel>;
-    not?: Prisma.NestedEnumMedicineCategoryWithAggregatesFilter<$PrismaModel> | $Enums.MedicineCategory;
+export type EnumCategoryStatusFilter<$PrismaModel = never> = {
+    equals?: $Enums.CategoryStatus | Prisma.EnumCategoryStatusFieldRefInput<$PrismaModel>;
+    in?: $Enums.CategoryStatus[] | Prisma.ListEnumCategoryStatusFieldRefInput<$PrismaModel>;
+    notIn?: $Enums.CategoryStatus[] | Prisma.ListEnumCategoryStatusFieldRefInput<$PrismaModel>;
+    not?: Prisma.NestedEnumCategoryStatusFilter<$PrismaModel> | $Enums.CategoryStatus;
+};
+export type EnumCategoryStatusWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.CategoryStatus | Prisma.EnumCategoryStatusFieldRefInput<$PrismaModel>;
+    in?: $Enums.CategoryStatus[] | Prisma.ListEnumCategoryStatusFieldRefInput<$PrismaModel>;
+    notIn?: $Enums.CategoryStatus[] | Prisma.ListEnumCategoryStatusFieldRefInput<$PrismaModel>;
+    not?: Prisma.NestedEnumCategoryStatusWithAggregatesFilter<$PrismaModel> | $Enums.CategoryStatus;
     _count?: Prisma.NestedIntFilter<$PrismaModel>;
-    _min?: Prisma.NestedEnumMedicineCategoryFilter<$PrismaModel>;
-    _max?: Prisma.NestedEnumMedicineCategoryFilter<$PrismaModel>;
+    _min?: Prisma.NestedEnumCategoryStatusFilter<$PrismaModel>;
+    _max?: Prisma.NestedEnumCategoryStatusFilter<$PrismaModel>;
 };
 export type EnumPaymentStatusFilter<$PrismaModel = never> = {
     equals?: $Enums.PaymentStatus | Prisma.EnumPaymentStatusFieldRefInput<$PrismaModel>;
@@ -424,12 +424,6 @@ export type NestedEnumMedicineTypeFilter<$PrismaModel = never> = {
     notIn?: $Enums.MedicineType[] | Prisma.ListEnumMedicineTypeFieldRefInput<$PrismaModel>;
     not?: Prisma.NestedEnumMedicineTypeFilter<$PrismaModel> | $Enums.MedicineType;
 };
-export type NestedEnumMedicineCategoryFilter<$PrismaModel = never> = {
-    equals?: $Enums.MedicineCategory | Prisma.EnumMedicineCategoryFieldRefInput<$PrismaModel>;
-    in?: $Enums.MedicineCategory[] | Prisma.ListEnumMedicineCategoryFieldRefInput<$PrismaModel>;
-    notIn?: $Enums.MedicineCategory[] | Prisma.ListEnumMedicineCategoryFieldRefInput<$PrismaModel>;
-    not?: Prisma.NestedEnumMedicineCategoryFilter<$PrismaModel> | $Enums.MedicineCategory;
-};
 export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | Prisma.IntFieldRefInput<$PrismaModel>;
     in?: number[] | Prisma.ListIntFieldRefInput<$PrismaModel>;
@@ -464,14 +458,20 @@ export type NestedEnumMedicineTypeWithAggregatesFilter<$PrismaModel = never> = {
     _min?: Prisma.NestedEnumMedicineTypeFilter<$PrismaModel>;
     _max?: Prisma.NestedEnumMedicineTypeFilter<$PrismaModel>;
 };
-export type NestedEnumMedicineCategoryWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: $Enums.MedicineCategory | Prisma.EnumMedicineCategoryFieldRefInput<$PrismaModel>;
-    in?: $Enums.MedicineCategory[] | Prisma.ListEnumMedicineCategoryFieldRefInput<$PrismaModel>;
-    notIn?: $Enums.MedicineCategory[] | Prisma.ListEnumMedicineCategoryFieldRefInput<$PrismaModel>;
-    not?: Prisma.NestedEnumMedicineCategoryWithAggregatesFilter<$PrismaModel> | $Enums.MedicineCategory;
+export type NestedEnumCategoryStatusFilter<$PrismaModel = never> = {
+    equals?: $Enums.CategoryStatus | Prisma.EnumCategoryStatusFieldRefInput<$PrismaModel>;
+    in?: $Enums.CategoryStatus[] | Prisma.ListEnumCategoryStatusFieldRefInput<$PrismaModel>;
+    notIn?: $Enums.CategoryStatus[] | Prisma.ListEnumCategoryStatusFieldRefInput<$PrismaModel>;
+    not?: Prisma.NestedEnumCategoryStatusFilter<$PrismaModel> | $Enums.CategoryStatus;
+};
+export type NestedEnumCategoryStatusWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.CategoryStatus | Prisma.EnumCategoryStatusFieldRefInput<$PrismaModel>;
+    in?: $Enums.CategoryStatus[] | Prisma.ListEnumCategoryStatusFieldRefInput<$PrismaModel>;
+    notIn?: $Enums.CategoryStatus[] | Prisma.ListEnumCategoryStatusFieldRefInput<$PrismaModel>;
+    not?: Prisma.NestedEnumCategoryStatusWithAggregatesFilter<$PrismaModel> | $Enums.CategoryStatus;
     _count?: Prisma.NestedIntFilter<$PrismaModel>;
-    _min?: Prisma.NestedEnumMedicineCategoryFilter<$PrismaModel>;
-    _max?: Prisma.NestedEnumMedicineCategoryFilter<$PrismaModel>;
+    _min?: Prisma.NestedEnumCategoryStatusFilter<$PrismaModel>;
+    _max?: Prisma.NestedEnumCategoryStatusFilter<$PrismaModel>;
 };
 export type NestedEnumPaymentStatusFilter<$PrismaModel = never> = {
     equals?: $Enums.PaymentStatus | Prisma.EnumPaymentStatusFieldRefInput<$PrismaModel>;
