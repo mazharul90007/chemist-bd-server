@@ -1,4 +1,3 @@
-//Get current user
 import catchAsync from "../../../shared/catchAsync";
 import { authServices } from "./auth.service";
 import sendResponse from "../../../shared/sendResponse";

@@ -1,7 +1,6 @@
-//=================Get User by Id=============
-
 import { prisma } from "../../../lib/prisma";
 
+//=================Get User by Id=============
 const getUserById = async (id: string) => {
   const userData = await prisma.user.findFirstOrThrow({
     where: { id },

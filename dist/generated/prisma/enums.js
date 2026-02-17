@@ -17,16 +17,16 @@ export const UserStatus = {
     BLOCKED: 'BLOCKED',
     DELETED: 'DELETED'
 };
+export const CategoryStatus = {
+    ACTIVE: 'ACTIVE',
+    BLOCKED: 'BLOCKED',
+    DELETED: 'DELETED'
+};
 export const MedicineType = {
     SYRUP: 'SYRUP',
     TABLET: 'TABLET',
     CAPSULE: 'CAPSULE',
     OTHER: 'OTHER'
-};
-export const CategoryStatus = {
-    ACTIVE: 'ACTIVE',
-    BLOCKED: 'BLOCKED',
-    DELETED: 'DELETED'
 };
 export const PaymentStatus = {
     PAID: 'PAID',

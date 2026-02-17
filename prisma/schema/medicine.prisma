@@ -1,22 +1,24 @@
 model Medicine {
-    id           String       @id @default(uuid())
+    id           String           @id @default(uuid())
     sellerId     String
-    seller       User         @relation(fields: [sellerId], references: [id])
+    seller       User             @relation(fields: [sellerId], references: [id])
+    name         String
     generic_name String?
     strength     String?
     company      String
+    photoUrl     String?
     quantity     Int
     price        Int
     Indications  String?
     Pharmacology String?
-    type         MedicineType @default(OTHER)
+    type         MedicineType     @default(OTHER)
     categoryId   String
-    category     Category     @relation(fields: [categoryId], references: [id])
+    category     MedicineCategory @relation(fields: [categoryId], references: [id])
     dosage       String?
     side_effects String?
     warnings     String?
-    createdAt    DateTime     @default(now())
-    updatedAt    DateTime     @updatedAt
+    createdAt    DateTime         @default(now())
+    updatedAt    DateTime         @updatedAt
     reviews      Review[]
     orderItems   OrderItem[]
 
@@ -24,27 +26,9 @@ model Medicine {
     @@map("medicines")
 }
 
-model Category {
-    id              String         @id @default(uuid())
-    categoryName    String         @unique
-    categoryDetails String?
-    categoryStatus  CategoryStatus @default(ACTIVE)
-    createdAt       DateTime       @default(now())
-    updatedAt       DateTime       @updatedAt
-    medicines       Medicine[]
-
-    @@map("categories")
-}
-
 enum MedicineType {
     SYRUP
     TABLET
     CAPSULE
     OTHER
-}
-
-enum CategoryStatus {
-    ACTIVE
-    BLOCKED
-    DELETED
 }

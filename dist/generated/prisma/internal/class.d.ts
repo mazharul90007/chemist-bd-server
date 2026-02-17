@@ -156,6 +156,17 @@ export interface PrismaClient<in LogOpts extends Prisma.LogLevel = never, in out
         omit: OmitOpts;
     }>;
     /**
+     * `prisma.medicineCategory`: Exposes CRUD operations for the **MedicineCategory** model.
+      * Example usage:
+      * ```ts
+      * // Fetch zero or more MedicineCategories
+      * const medicineCategories = await prisma.medicineCategory.findMany()
+      * ```
+      */
+    get medicineCategory(): Prisma.MedicineCategoryDelegate<ExtArgs, {
+        omit: OmitOpts;
+    }>;
+    /**
      * `prisma.medicine`: Exposes CRUD operations for the **Medicine** model.
       * Example usage:
       * ```ts
@@ -164,17 +175,6 @@ export interface PrismaClient<in LogOpts extends Prisma.LogLevel = never, in out
       * ```
       */
     get medicine(): Prisma.MedicineDelegate<ExtArgs, {
-        omit: OmitOpts;
-    }>;
-    /**
-     * `prisma.category`: Exposes CRUD operations for the **Category** model.
-      * Example usage:
-      * ```ts
-      * // Fetch zero or more Categories
-      * const categories = await prisma.category.findMany()
-      * ```
-      */
-    get category(): Prisma.CategoryDelegate<ExtArgs, {
         omit: OmitOpts;
     }>;
     /**

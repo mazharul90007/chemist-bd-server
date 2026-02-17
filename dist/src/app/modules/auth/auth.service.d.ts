@@ -1,7 +1,7 @@
 export declare const authServices: {
     getUserById: (id: string) => Promise<{
         reviews: {
-            status: import("../../../../prisma/generated/prisma/enums").ReviewStatus;
+            status: import("../../../../generated/prisma/enums").ReviewStatus;
             id: string;
             createdAt: Date;
             updatedAt: Date;
@@ -9,20 +9,20 @@ export declare const authServices: {
             medicineId: string;
         }[];
         orders: {
-            status: import("../../../../prisma/generated/prisma/enums").OrderStatus;
+            status: import("../../../../generated/prisma/enums").OrderStatus;
             id: string;
             createdAt: Date;
             updatedAt: Date;
             orderNo: string;
             totalAmount: number;
             dueAmount: number;
-            paymentStatus: import("../../../../prisma/generated/prisma/enums").PaymentStatus;
+            paymentStatus: import("../../../../generated/prisma/enums").PaymentStatus;
             customerId: string;
         }[];
     } & {
         name: string | null;
-        role: import("../../../../prisma/generated/prisma/enums").UserRole;
-        status: import("../../../../prisma/generated/prisma/enums").UserStatus;
+        role: import("../../../../generated/prisma/enums").UserRole;
+        status: import("../../../../generated/prisma/enums").UserStatus;
         id: string;
         createdAt: Date;
         updatedAt: Date;
@@ -32,8 +32,8 @@ export declare const authServices: {
     }>;
     getMyProfile: (id: string) => Promise<{
         name: string | null;
-        role: import("../../../../prisma/generated/prisma/enums").UserRole;
-        status: import("../../../../prisma/generated/prisma/enums").UserStatus;
+        role: import("../../../../generated/prisma/enums").UserRole;
+        status: import("../../../../generated/prisma/enums").UserStatus;
         id: string;
         createdAt: Date;
         updatedAt: Date;

@@ -1,5 +1,3 @@
-//Get current user
-
 import { Request, Response } from "express";
 import catchAsync from "../../../shared/catchAsync";
 import { authServices } from "./auth.service";

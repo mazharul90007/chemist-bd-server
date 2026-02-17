@@ -235,8 +235,8 @@ export declare const ModelName: {
     readonly Session: "Session";
     readonly Account: "Account";
     readonly Verification: "Verification";
+    readonly MedicineCategory: "MedicineCategory";
     readonly Medicine: "Medicine";
-    readonly Category: "Category";
     readonly Order: "Order";
     readonly OrderItem: "OrderItem";
     readonly Review: "Review";
@@ -252,7 +252,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         omit: GlobalOmitOptions;
     };
     meta: {
-        modelProps: "user" | "session" | "account" | "verification" | "medicine" | "category" | "order" | "orderItem" | "review";
+        modelProps: "user" | "session" | "account" | "verification" | "medicineCategory" | "medicine" | "order" | "orderItem" | "review";
         txIsolationLevel: TransactionIsolationLevel;
     };
     model: {
@@ -552,6 +552,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
                 };
             };
         };
+        MedicineCategory: {
+            payload: Prisma.$MedicineCategoryPayload<ExtArgs>;
+            fields: Prisma.MedicineCategoryFieldRefs;
+            operations: {
+                findUnique: {
+                    args: Prisma.MedicineCategoryFindUniqueArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$MedicineCategoryPayload> | null;
+                };
+                findUniqueOrThrow: {
+                    args: Prisma.MedicineCategoryFindUniqueOrThrowArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$MedicineCategoryPayload>;
+                };
+                findFirst: {
+                    args: Prisma.MedicineCategoryFindFirstArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$MedicineCategoryPayload> | null;
+                };
+                findFirstOrThrow: {
+                    args: Prisma.MedicineCategoryFindFirstOrThrowArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$MedicineCategoryPayload>;
+                };
+                findMany: {
+                    args: Prisma.MedicineCategoryFindManyArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$MedicineCategoryPayload>[];
+                };
+                create: {
+                    args: Prisma.MedicineCategoryCreateArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$MedicineCategoryPayload>;
+                };
+                createMany: {
+                    args: Prisma.MedicineCategoryCreateManyArgs<ExtArgs>;
+                    result: BatchPayload;
+                };
+                createManyAndReturn: {
+                    args: Prisma.MedicineCategoryCreateManyAndReturnArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$MedicineCategoryPayload>[];
+                };
+                delete: {
+                    args: Prisma.MedicineCategoryDeleteArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$MedicineCategoryPayload>;
+                };
+                update: {
+                    args: Prisma.MedicineCategoryUpdateArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$MedicineCategoryPayload>;
+                };
+                deleteMany: {
+                    args: Prisma.MedicineCategoryDeleteManyArgs<ExtArgs>;
+                    result: BatchPayload;
+                };
+                updateMany: {
+                    args: Prisma.MedicineCategoryUpdateManyArgs<ExtArgs>;
+                    result: BatchPayload;
+                };
+                updateManyAndReturn: {
+                    args: Prisma.MedicineCategoryUpdateManyAndReturnArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$MedicineCategoryPayload>[];
+                };
+                upsert: {
+                    args: Prisma.MedicineCategoryUpsertArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$MedicineCategoryPayload>;
+                };
+                aggregate: {
+                    args: Prisma.MedicineCategoryAggregateArgs<ExtArgs>;
+                    result: runtime.Types.Utils.Optional<Prisma.AggregateMedicineCategory>;
+                };
+                groupBy: {
+                    args: Prisma.MedicineCategoryGroupByArgs<ExtArgs>;
+                    result: runtime.Types.Utils.Optional<Prisma.MedicineCategoryGroupByOutputType>[];
+                };
+                count: {
+                    args: Prisma.MedicineCategoryCountArgs<ExtArgs>;
+                    result: runtime.Types.Utils.Optional<Prisma.MedicineCategoryCountAggregateOutputType> | number;
+                };
+            };
+        };
         Medicine: {
             payload: Prisma.$MedicinePayload<ExtArgs>;
             fields: Prisma.MedicineFieldRefs;
@@ -623,80 +697,6 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
                 count: {
                     args: Prisma.MedicineCountArgs<ExtArgs>;
                     result: runtime.Types.Utils.Optional<Prisma.MedicineCountAggregateOutputType> | number;
-                };
-            };
-        };
-        Category: {
-            payload: Prisma.$CategoryPayload<ExtArgs>;
-            fields: Prisma.CategoryFieldRefs;
-            operations: {
-                findUnique: {
-                    args: Prisma.CategoryFindUniqueArgs<ExtArgs>;
-                    result: runtime.Types.Utils.PayloadToResult<Prisma.$CategoryPayload> | null;
-                };
-                findUniqueOrThrow: {
-                    args: Prisma.CategoryFindUniqueOrThrowArgs<ExtArgs>;
-                    result: runtime.Types.Utils.PayloadToResult<Prisma.$CategoryPayload>;
-                };
-                findFirst: {
-                    args: Prisma.CategoryFindFirstArgs<ExtArgs>;
-                    result: runtime.Types.Utils.PayloadToResult<Prisma.$CategoryPayload> | null;
-                };
-                findFirstOrThrow: {
-                    args: Prisma.CategoryFindFirstOrThrowArgs<ExtArgs>;
-                    result: runtime.Types.Utils.PayloadToResult<Prisma.$CategoryPayload>;
-                };
-                findMany: {
-                    args: Prisma.CategoryFindManyArgs<ExtArgs>;
-                    result: runtime.Types.Utils.PayloadToResult<Prisma.$CategoryPayload>[];
-                };
-                create: {
-                    args: Prisma.CategoryCreateArgs<ExtArgs>;
-                    result: runtime.Types.Utils.PayloadToResult<Prisma.$CategoryPayload>;
-                };
-                createMany: {
-                    args: Prisma.CategoryCreateManyArgs<ExtArgs>;
-                    result: BatchPayload;
-                };
-                createManyAndReturn: {
-                    args: Prisma.CategoryCreateManyAndReturnArgs<ExtArgs>;
-                    result: runtime.Types.Utils.PayloadToResult<Prisma.$CategoryPayload>[];
-                };
-                delete: {
-                    args: Prisma.CategoryDeleteArgs<ExtArgs>;
-                    result: runtime.Types.Utils.PayloadToResult<Prisma.$CategoryPayload>;
-                };
-                update: {
-                    args: Prisma.CategoryUpdateArgs<ExtArgs>;
-                    result: runtime.Types.Utils.PayloadToResult<Prisma.$CategoryPayload>;
-                };
-                deleteMany: {
-                    args: Prisma.CategoryDeleteManyArgs<ExtArgs>;
-                    result: BatchPayload;
-                };
-                updateMany: {
-                    args: Prisma.CategoryUpdateManyArgs<ExtArgs>;
-                    result: BatchPayload;
-                };
-                updateManyAndReturn: {
-                    args: Prisma.CategoryUpdateManyAndReturnArgs<ExtArgs>;
-                    result: runtime.Types.Utils.PayloadToResult<Prisma.$CategoryPayload>[];
-                };
-                upsert: {
-                    args: Prisma.CategoryUpsertArgs<ExtArgs>;
-                    result: runtime.Types.Utils.PayloadToResult<Prisma.$CategoryPayload>;
-                };
-                aggregate: {
-                    args: Prisma.CategoryAggregateArgs<ExtArgs>;
-                    result: runtime.Types.Utils.Optional<Prisma.AggregateCategory>;
-                };
-                groupBy: {
-                    args: Prisma.CategoryGroupByArgs<ExtArgs>;
-                    result: runtime.Types.Utils.Optional<Prisma.CategoryGroupByOutputType>[];
-                };
-                count: {
-                    args: Prisma.CategoryCountArgs<ExtArgs>;
-                    result: runtime.Types.Utils.Optional<Prisma.CategoryCountAggregateOutputType> | number;
                 };
             };
         };
@@ -1004,12 +1004,23 @@ export declare const VerificationScalarFieldEnum: {
     readonly updatedAt: "updatedAt";
 };
 export type VerificationScalarFieldEnum = (typeof VerificationScalarFieldEnum)[keyof typeof VerificationScalarFieldEnum];
+export declare const MedicineCategoryScalarFieldEnum: {
+    readonly id: "id";
+    readonly categoryName: "categoryName";
+    readonly categoryDetails: "categoryDetails";
+    readonly categoryStatus: "categoryStatus";
+    readonly createdAt: "createdAt";
+    readonly updatedAt: "updatedAt";
+};
+export type MedicineCategoryScalarFieldEnum = (typeof MedicineCategoryScalarFieldEnum)[keyof typeof MedicineCategoryScalarFieldEnum];
 export declare const MedicineScalarFieldEnum: {
     readonly id: "id";
     readonly sellerId: "sellerId";
+    readonly name: "name";
     readonly generic_name: "generic_name";
     readonly strength: "strength";
     readonly company: "company";
+    readonly photoUrl: "photoUrl";
     readonly quantity: "quantity";
     readonly price: "price";
     readonly Indications: "Indications";
@@ -1023,15 +1034,6 @@ export declare const MedicineScalarFieldEnum: {
     readonly updatedAt: "updatedAt";
 };
 export type MedicineScalarFieldEnum = (typeof MedicineScalarFieldEnum)[keyof typeof MedicineScalarFieldEnum];
-export declare const CategoryScalarFieldEnum: {
-    readonly id: "id";
-    readonly categoryName: "categoryName";
-    readonly categoryDetails: "categoryDetails";
-    readonly categoryStatus: "categoryStatus";
-    readonly createdAt: "createdAt";
-    readonly updatedAt: "updatedAt";
-};
-export type CategoryScalarFieldEnum = (typeof CategoryScalarFieldEnum)[keyof typeof CategoryScalarFieldEnum];
 export declare const OrderScalarFieldEnum: {
     readonly id: "id";
     readonly orderNo: "orderNo";
@@ -1116,6 +1118,14 @@ export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel
  */
 export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>;
 /**
+ * Reference to a field of type 'CategoryStatus'
+ */
+export type EnumCategoryStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'CategoryStatus'>;
+/**
+ * Reference to a field of type 'CategoryStatus[]'
+ */
+export type ListEnumCategoryStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'CategoryStatus[]'>;
+/**
  * Reference to a field of type 'Int'
  */
 export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>;
@@ -1131,14 +1141,6 @@ export type EnumMedicineTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$Pri
  * Reference to a field of type 'MedicineType[]'
  */
 export type ListEnumMedicineTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'MedicineType[]'>;
-/**
- * Reference to a field of type 'CategoryStatus'
- */
-export type EnumCategoryStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'CategoryStatus'>;
-/**
- * Reference to a field of type 'CategoryStatus[]'
- */
-export type ListEnumCategoryStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'CategoryStatus[]'>;
 /**
  * Reference to a field of type 'PaymentStatus'
  */
@@ -1269,8 +1271,8 @@ export type GlobalOmitConfig = {
     session?: Prisma.SessionOmit;
     account?: Prisma.AccountOmit;
     verification?: Prisma.VerificationOmit;
+    medicineCategory?: Prisma.MedicineCategoryOmit;
     medicine?: Prisma.MedicineOmit;
-    category?: Prisma.CategoryOmit;
     order?: Prisma.OrderOmit;
     orderItem?: Prisma.OrderItemOmit;
     review?: Prisma.ReviewOmit;

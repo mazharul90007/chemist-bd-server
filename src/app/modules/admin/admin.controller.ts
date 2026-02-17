@@ -5,6 +5,7 @@ import sendResponse from "../../../shared/sendResponse";
 import status from "http-status";
 import { UserStatus } from "../../../../generated/prisma/enums";
 
+
 //===============Get All Users===============
 const getAllUsers = catchAsync(async (req: Request, res: Response) => {
   const result = await adminService.getAllUsers();
@@ -30,6 +31,8 @@ const updateUserStatus = catchAsync(async (req: Request, res: Response) => {
     data: result,
   });
 });
+
+
 
 export const adminController = {
   getAllUsers,

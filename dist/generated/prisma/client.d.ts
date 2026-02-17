@@ -40,15 +40,15 @@ export type Account = Prisma.AccountModel;
  */
 export type Verification = Prisma.VerificationModel;
 /**
+ * Model MedicineCategory
+ *
+ */
+export type MedicineCategory = Prisma.MedicineCategoryModel;
+/**
  * Model Medicine
  *
  */
 export type Medicine = Prisma.MedicineModel;
-/**
- * Model Category
- *
- */
-export type Category = Prisma.CategoryModel;
 /**
  * Model Order
  *

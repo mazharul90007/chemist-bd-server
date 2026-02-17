@@ -10,6 +10,12 @@ export declare const UserStatus: {
     readonly DELETED: "DELETED";
 };
 export type UserStatus = (typeof UserStatus)[keyof typeof UserStatus];
+export declare const CategoryStatus: {
+    readonly ACTIVE: "ACTIVE";
+    readonly BLOCKED: "BLOCKED";
+    readonly DELETED: "DELETED";
+};
+export type CategoryStatus = (typeof CategoryStatus)[keyof typeof CategoryStatus];
 export declare const MedicineType: {
     readonly SYRUP: "SYRUP";
     readonly TABLET: "TABLET";
@@ -17,12 +23,6 @@ export declare const MedicineType: {
     readonly OTHER: "OTHER";
 };
 export type MedicineType = (typeof MedicineType)[keyof typeof MedicineType];
-export declare const CategoryStatus: {
-    readonly ACTIVE: "ACTIVE";
-    readonly BLOCKED: "BLOCKED";
-    readonly DELETED: "DELETED";
-};
-export type CategoryStatus = (typeof CategoryStatus)[keyof typeof CategoryStatus];
 export declare const PaymentStatus: {
     readonly PAID: "PAID";
     readonly UNPAID: "UNPAID";

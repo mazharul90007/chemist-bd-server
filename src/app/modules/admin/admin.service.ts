@@ -1,6 +1,7 @@
 import { UserStatus } from "../../../../generated/prisma/enums";
 import { prisma } from "../../../lib/prisma";
 
+
 //===============Get All Users===============
 const getAllUsers = async () => {
   const result = await prisma.user.findMany();
@@ -19,6 +20,8 @@ const updateUserStatus = async (id: string, status: UserStatus) => {
 
   return result;
 };
+
+
 
 export const adminService = {
   getAllUsers,
