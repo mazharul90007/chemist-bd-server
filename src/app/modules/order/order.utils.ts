@@ -1,5 +1,4 @@
-export const generateOrderNo = () => {
-    const timestamp = Date.now().toString();
-    const random = Math.floor(1000 + Math.random() * 9000).toString();
-    return `ORD-${timestamp}-${random}`;
+export const generatedOrderNo = (): string => {
+  const randomNumber = Math.floor(10000000 + Math.random() * 90000000);
+  return `ORD-${randomNumber}`;
 };
