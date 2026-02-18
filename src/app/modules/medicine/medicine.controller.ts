@@ -5,6 +5,8 @@ import { IcreateMedicine } from "./medicine.type";
 import sendResponse from "../../../shared/sendResponse";
 import status from "http-status";
 import { IauthUser } from "../../../types/common";
+import pick from "../../../shared/pick";
+import { medicineFilterableFields } from "./medicine.constant";
 
 //==============Create medicine=================
 const createMedicine = catchAsync(async (req: Request, res: Response) => {
@@ -21,6 +23,25 @@ const createMedicine = catchAsync(async (req: Request, res: Response) => {
     success: true,
     message: "Medicine created successfully",
     data: result,
+  });
+});
+
+//================Get all medicines with pagination & filters =================
+const getAllMedicines = catchAsync(async (req: Request, res: Response) => {
+  //extract related filters
+  const filters = pick(req.query, medicineFilterableFields);
+
+  //extract pagination options
+  const options = pick(req.query, ["page", "limit", "sortBy", "sortOrder"]);
+
+  const result = await medicineService.getAllMedicines(filters, options);
+
+  sendResponse(res, {
+    statusCode: status.OK,
+    success: true,
+    message: "Medicines fetched successfully",
+    meta: result.meta,
+    data: result.data,
   });
 });
 
@@ -69,6 +90,7 @@ const removeMedicine = catchAsync(async (req: Request, res: Response) => {
 
 export const medicineController = {
   createMedicine,
+  getAllMedicines,
   getMedicineById,
   updateMedicine,
   removeMedicine,

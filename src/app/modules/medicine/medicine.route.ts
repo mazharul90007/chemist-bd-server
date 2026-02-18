@@ -11,6 +11,8 @@ router.post(
   medicineController.createMedicine,
 );
 
+router.get("/", medicineController.getAllMedicines);
+
 router.get("/:id", medicineController.getMedicineById);
 router.patch("/:id", auth(UserRole.SELLER), medicineController.updateMedicine);
 router.delete(

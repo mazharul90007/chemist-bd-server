@@ -1,6 +1,8 @@
 import { UserRole } from "../../../../generated/prisma/enums";
 import { prisma } from "../../../lib/prisma";
 import { IauthUser } from "../../../types/common";
+import calculatePagination from "../../helpers/paginationHelpers";
+import { medicineSearchableFields } from "./medicine.constant";
 import { IcreateMedicine, IupdateMedicine } from "./medicine.type";
 
 //==============Create medicine=================
@@ -15,6 +17,58 @@ const createMedicine = async (payload: IcreateMedicine) => {
   });
 
   return result;
+};
+
+//================Get all medicines with pagination & filters =================
+const getAllMedicines = async (filters: any, options: any) => {
+  const { searchTerm, minPrice, maxPrice, categoryId } = filters;
+
+  const { page, limit, skip, sortBy, sortOrder } = calculatePagination(options);
+
+  const where: any = {};
+
+  //search logic
+  if (searchTerm) {
+    where.OR = medicineSearchableFields.map((field) => ({
+      [field]: {
+        contains: searchTerm,
+        mode: "insensitive",
+      },
+    }));
+  }
+
+  //Price filtering
+  if (minPrice || maxPrice) {
+    where.price = {
+      gte: minPrice ? Number(minPrice) : undefined,
+      lte: maxPrice ? Number(maxPrice) : undefined,
+    };
+  }
+
+  //Category filtere
+  if (categoryId) {
+    where.categoryId = categoryId;
+  }
+
+  //Now fetch data with pagination and sorting
+  const result = await prisma.medicine.findMany({
+    where,
+    skip,
+    take: limit,
+    orderBy: {
+      [sortBy]: sortOrder,
+    },
+    include: {
+      category: true,
+    },
+  });
+
+  const total = await prisma.medicine.count({ where });
+
+  return {
+    meta: { page, limit, total },
+    data: result,
+  };
 };
 
 //============Get medicine by Id===============
@@ -87,6 +141,7 @@ const removeMedicine = async (id: string, currentUser: IauthUser) => {
 
 export const medicineService = {
   createMedicine,
+  getAllMedicines,
   getMedicineById,
   updateMedicine,
   removeMedicine,
