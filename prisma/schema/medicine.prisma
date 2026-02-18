@@ -21,6 +21,7 @@ model Medicine {
     updatedAt    DateTime         @updatedAt
     reviews      Review[]
     orderItems   OrderItem[]
+    cartItems    CartItem[]
 
     @@index([company, price])
     @@map("medicines")

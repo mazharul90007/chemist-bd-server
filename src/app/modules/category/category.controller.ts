@@ -7,18 +7,31 @@ import { IcreateCategories } from "./category.interface";
 
 //===============Create Category===============
 const createCategory = catchAsync(async (req: Request, res: Response) => {
-    const result = await categoryService.createCategory(
-        req.body as IcreateCategories,
-    );
+  const result = await categoryService.createCategory(
+    req.body as IcreateCategories,
+  );
 
-    sendResponse(res, {
-        statusCode: status.OK,
-        success: true,
-        message: "Category created successfully",
-        data: result,
-    });
+  sendResponse(res, {
+    statusCode: status.OK,
+    success: true,
+    message: "Category created successfully",
+    data: result,
+  });
+});
+
+//===============Get all Categories===============
+const getAllCategories = catchAsync(async (req: Request, res: Response) => {
+  const result = await categoryService.getAllCategories();
+
+  sendResponse(res, {
+    statusCode: status.OK,
+    success: true,
+    message: "All Categories successfully",
+    data: result,
+  });
 });
 
 export const categoryController = {
-    createCategory,
+  createCategory,
+  getAllCategories,
 };

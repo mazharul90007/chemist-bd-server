@@ -6,7 +6,13 @@ const createCategory = async (data) => {
     });
     return result;
 };
+//===============Get all Categories===============
+const getAllCategories = async () => {
+    const result = await prisma.medicineCategory.findMany();
+    return result;
+};
 export const categoryService = {
     createCategory,
+    getAllCategories,
 };
 //# sourceMappingURL=category.service.js.map

@@ -17,3 +17,5 @@ export interface IcreateMedicine {
   side_effects?: string;
   warnings?: string;
 }
+
+export type IupdateMedicine = Partial<IcreateMedicine>;

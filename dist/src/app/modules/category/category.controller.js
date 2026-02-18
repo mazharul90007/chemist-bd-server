@@ -12,7 +12,18 @@ const createCategory = catchAsync(async (req, res) => {
         data: result,
     });
 });
+//===============Get all Categories===============
+const getAllCategories = catchAsync(async (req, res) => {
+    const result = await categoryService.getAllCategories();
+    sendResponse(res, {
+        statusCode: status.OK,
+        success: true,
+        message: "All Categories successfully",
+        data: result,
+    });
+});
 export const categoryController = {
     createCategory,
+    getAllCategories,
 };
 //# sourceMappingURL=category.controller.js.map

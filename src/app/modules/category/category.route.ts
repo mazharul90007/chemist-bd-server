@@ -6,5 +6,6 @@ import { categoryController } from "./category.controller";
 const router = Router();
 
 router.post("/", auth(UserRole.ADMIN), categoryController.createCategory);
+router.get("/", categoryController.getAllCategories);
 
 export const categoryRoutes = router;
