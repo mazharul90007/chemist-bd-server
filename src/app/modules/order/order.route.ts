@@ -10,4 +10,7 @@ router.post(
   orderController.createOrderFromCart,
 );
 
+router.get("/", auth(UserRole.CUSTOMER), orderController.getMyOrders);
+router.get("/:id", auth(UserRole.CUSTOMER), orderController.getOrderById);
+
 export const orderRoutes = router;

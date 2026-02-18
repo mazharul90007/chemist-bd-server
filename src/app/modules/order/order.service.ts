@@ -1,4 +1,5 @@
 import { prisma } from "../../../lib/prisma";
+import calculatePagination from "../../helpers/paginationHelpers";
 import { generatedOrderNo } from "./order.utils";
 
 //=================Create Order from Cart==================
@@ -64,6 +65,76 @@ const createOrderFromCart = async (
   });
 };
 
+//===============Get My Orders==================
+const getMyOrders = async (userId: string, filters: any, options: any) => {
+  const { searchTerm, ...filterData } = filters;
+  const { page, limit, skip, sortBy, sortOrder } = calculatePagination(options);
+
+  //verify ownership and search by staus and payment status
+  const where: any = {
+    customerId: userId,
+    ...filterData,
+  };
+
+  //search by order no
+  if (searchTerm) {
+    where.orderNo = {
+      contains: searchTerm,
+      mode: "insensitive",
+    };
+  }
+
+  const result = await prisma.order.findMany({
+    where,
+    skip,
+    take: limit,
+    orderBy: {
+      [sortBy]: sortOrder,
+    },
+    include: {
+      orderItems: {
+        include: {
+          medicine: true,
+        },
+      },
+    },
+  });
+
+  const total = await prisma.order.count({ where });
+
+  return {
+    meta: { page, limit, total },
+    data: result,
+  };
+};
+
+//================Get Order details by Id==============
+const getOrderById = async (orderId: string, userId: string) => {
+  const result = await prisma.order.findUniqueOrThrow({
+    where: {
+      id: orderId,
+      customerId: userId,
+    },
+    include: {
+      orderItems: {
+        include: {
+          medicine: true,
+        },
+      },
+      customer: {
+        select: {
+          id: true,
+          name: true,
+          email: true,
+        },
+      },
+    },
+  });
+  return result;
+};
+
 export const orderService = {
   createOrderFromCart,
+  getMyOrders,
+  getOrderById,
 };
