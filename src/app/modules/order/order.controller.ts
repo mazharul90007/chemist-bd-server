@@ -5,6 +5,7 @@ import sendResponse from "../../../shared/sendResponse";
 import status from "http-status";
 import pick from "../../../shared/pick";
 import { orderFilterableFields } from "./order.constant";
+import { IauthUser } from "../../../types/common";
 
 //=================Create Order from Cart==================
 const createOrderFromCart = catchAsync(async (req: Request, res: Response) => {
@@ -52,8 +53,60 @@ const getOrderById = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+//===================Update Order status==================
+const updateOrderStatus = catchAsync(async (req: Request, res: Response) => {
+  const id = req.params.id as string;
+  const { status: newStatus } = req.body;
+  const user = req.user as IauthUser;
+
+  const result = await orderService.updateOrderStatus(id, newStatus, user);
+
+  sendResponse(res, {
+    statusCode: 200,
+    success: true,
+    message: "Order status updated successfully",
+    data: result,
+  });
+});
+
+//===============Get Seller's Orders==================
+const getSellerOrders = catchAsync(async (req: Request, res: Response) => {
+  const sellerId = req.user?.id as string;
+
+  const filters = pick(req.query, orderFilterableFields);
+  const options = pick(req.query, ["page", "limit", "sortBy", "sortOrder"]);
+
+  const result = await orderService.getSellerOrders(sellerId, filters, options);
+
+  sendResponse(res, {
+    statusCode: status.OK,
+    success: true,
+    message: "Seller orders fetched successfully",
+    meta: result.meta,
+    data: result.data,
+  });
+});
+
+//====================Cancel Order=================
+const cancelOrder = catchAsync(async (req: Request, res: Response) => {
+  const orderId = req.params.id as string;
+  const userId = req.user?.id as string;
+
+  const result = await orderService.cancelOrder(orderId, userId);
+
+  sendResponse(res, {
+    statusCode: status.OK,
+    success: true,
+    message: "Order canceled successfully",
+    data: result,
+  });
+});
+
 export const orderController = {
   createOrderFromCart,
   getMyOrders,
   getOrderById,
+  updateOrderStatus,
+  getSellerOrders,
+  cancelOrder,
 };

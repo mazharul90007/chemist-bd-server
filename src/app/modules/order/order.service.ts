@@ -1,3 +1,4 @@
+import { OrderStatus, UserRole } from "../../../../generated/prisma/enums";
 import { prisma } from "../../../lib/prisma";
 import calculatePagination from "../../helpers/paginationHelpers";
 import { generatedOrderNo } from "./order.utils";
@@ -133,8 +134,133 @@ const getOrderById = async (orderId: string, userId: string) => {
   return result;
 };
 
+//===================Update Order status==================
+const updateOrderStatus = async (
+  orderId: string,
+  status: OrderStatus,
+  user: { id: string; role: string },
+) => {
+  // If seller, verify they own at least one item in this order
+  if (user.role === UserRole.SELLER) {
+    const isOwnerOfOrderItems = await prisma.orderItem.findFirst({
+      where: {
+        orderId: orderId,
+        medicine: {
+          sellerId: user.id,
+        },
+      },
+    });
+
+    if (!isOwnerOfOrderItems) {
+      throw new Error("You are not authorized to update this order");
+    }
+  }
+
+  //  Update the order status
+  const result = await prisma.order.update({
+    where: { id: orderId },
+    data: { status },
+  });
+
+  return result;
+};
+
+//===============Get My Orders (Seller)==================
+const getSellerOrders = async (
+  sellerId: string,
+  filters: any,
+  options: any,
+) => {
+  const { searchTerm, ...filterData } = filters;
+  const { page, limit, skip, sortBy, sortOrder } = calculatePagination(options);
+
+  const where: any = {
+    orderItems: {
+      some: {
+        medicine: {
+          sellerId,
+        },
+      },
+    },
+    ...filterData,
+  };
+
+  if (searchTerm) {
+    where.orderNo = {
+      contains: searchTerm,
+      mode: "insensitive",
+    };
+  }
+
+  const result = await prisma.order.findMany({
+    where,
+    skip,
+    take: limit,
+    orderBy: {
+      [sortBy]: sortOrder,
+    },
+    include: {
+      orderItems: {
+        where: {
+          medicine: {
+            sellerId,
+          },
+        },
+        include: {
+          medicine: true,
+        },
+      },
+      customer: {
+        select: {
+          id: true,
+          name: true,
+          email: true,
+        },
+      },
+    },
+  });
+
+  const total = await prisma.order.count({ where });
+
+  return {
+    meta: { page, limit, total },
+    data: result,
+  };
+};
+
+//====================Cancel Order=================
+const cancelOrder = async (orderId: string, userId: string) => {
+  // verify ownership
+  const order = await prisma.order.findUnique({
+    where: {
+      id: orderId,
+      customerId: userId,
+    },
+  });
+
+  if (!order) {
+    throw new Error("Order not found");
+  }
+
+  // check if the order is in PENDING stage
+  if (order.status !== OrderStatus.PENDING) {
+    throw new Error(`Cannot cancel order in ${order.status} stage`);
+  }
+
+  // Update status to CANCELED
+  const result = await prisma.order.update({
+    where: { id: orderId },
+    data: { status: OrderStatus.CANCELED },
+  });
+
+  return result;
+};
+
 export const orderService = {
   createOrderFromCart,
   getMyOrders,
   getOrderById,
+  updateOrderStatus,
+  getSellerOrders,
+  cancelOrder,
 };

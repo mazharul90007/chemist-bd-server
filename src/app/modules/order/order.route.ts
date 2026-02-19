@@ -11,6 +11,22 @@ router.post(
 );
 
 router.get("/", auth(UserRole.CUSTOMER), orderController.getMyOrders);
+router.get(
+  "/seller-orders",
+  auth(UserRole.SELLER),
+  orderController.getSellerOrders,
+);
 router.get("/:id", auth(UserRole.CUSTOMER), orderController.getOrderById);
+router.patch(
+  "/:id",
+  auth(UserRole.SELLER, UserRole.ADMIN),
+  orderController.updateOrderStatus,
+);
+
+router.patch(
+  "/cancel/:id",
+  auth(UserRole.CUSTOMER),
+  orderController.cancelOrder,
+);
 
 export const orderRoutes = router;

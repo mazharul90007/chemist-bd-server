@@ -78,15 +78,17 @@ const removeMedicine = catchAsync(async (req: Request, res: Response) => {
   const id = req.params.id as string;
   const currentUser = req.user as IauthUser;
 
-  const result = await medicineService.removeMedicine(id, currentUser);
+  await medicineService.removeMedicine(id, currentUser);
 
   sendResponse(res, {
     statusCode: status.OK,
     success: true,
     message: "Medicine removed successfully",
-    data: result,
+    data: null,
   });
 });
+
+
 
 export const medicineController = {
   createMedicine,

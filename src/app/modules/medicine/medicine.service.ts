@@ -8,7 +8,7 @@ import { IcreateMedicine, IupdateMedicine } from "./medicine.type";
 //==============Create medicine=================
 const createMedicine = async (payload: IcreateMedicine) => {
   //check if category exist
-  const existingCategory = await prisma.medicineCategory.findFirstOrThrow({
+  await prisma.medicineCategory.findFirstOrThrow({
     where: { id: payload.categoryId },
   });
 
@@ -134,10 +134,12 @@ const removeMedicine = async (id: string, currentUser: IauthUser) => {
     throw new Error("You are not authorized to delete this medicine");
   }
 
-  const result = await prisma.medicine.delete({
+  await prisma.medicine.delete({
     where: { id },
   });
 };
+
+
 
 export const medicineService = {
   createMedicine,
