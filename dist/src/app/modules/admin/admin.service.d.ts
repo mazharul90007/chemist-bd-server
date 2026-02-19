@@ -1,6 +1,26 @@
 import { UserStatus } from "../../../../generated/prisma/enums";
 export declare const adminService: {
-    getAllUsers: () => Promise<any>;
-    updateUserStatus: (id: string, status: UserStatus) => Promise<any>;
+    getAllUsers: () => Promise<{
+        name: string | null;
+        role: import("../../../../generated/prisma/enums").UserRole;
+        status: UserStatus;
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        email: string;
+        emailVerified: boolean;
+        image: string | null;
+    }[]>;
+    updateUserStatus: (id: string, status: UserStatus) => Promise<{
+        name: string | null;
+        role: import("../../../../generated/prisma/enums").UserRole;
+        status: UserStatus;
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        email: string;
+        emailVerified: boolean;
+        image: string | null;
+    }>;
 };
 //# sourceMappingURL=admin.service.d.ts.map

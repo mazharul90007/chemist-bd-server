@@ -1,2 +1,3 @@
-export declare const orderRoutes: import("express-serve-static-core").Router;
+import { Router } from "express";
+export declare const orderRoutes: Router;
 //# sourceMappingURL=order.route.d.ts.map

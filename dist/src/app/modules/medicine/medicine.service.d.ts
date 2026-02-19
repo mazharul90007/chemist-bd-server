@@ -1,17 +1,108 @@
 import { IauthUser } from "../../../types/common";
 import { IcreateMedicine, IupdateMedicine } from "./medicine.type";
 export declare const medicineService: {
-    createMedicine: (payload: IcreateMedicine) => Promise<any>;
+    createMedicine: (payload: IcreateMedicine) => Promise<{
+        name: string;
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        type: import("../../../../generated/prisma/enums").MedicineType;
+        generic_name: string | null;
+        company: string;
+        categoryId: string;
+        strength: string | null;
+        photoUrl: string | null;
+        quantity: number;
+        price: number;
+        Indications: string | null;
+        Pharmacology: string | null;
+        dosage: string | null;
+        side_effects: string | null;
+        warnings: string | null;
+        sellerId: string;
+    }>;
     getAllMedicines: (filters: any, options: any) => Promise<{
         meta: {
             page: number;
             limit: number;
-            total: any;
+            total: number;
         };
-        data: any;
+        data: ({
+            category: {
+                id: string;
+                createdAt: Date;
+                updatedAt: Date;
+                categoryName: string;
+                categoryDetails: string | null;
+                categoryStatus: import("../../../../generated/prisma/enums").CategoryStatus;
+            };
+        } & {
+            name: string;
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            type: import("../../../../generated/prisma/enums").MedicineType;
+            generic_name: string | null;
+            company: string;
+            categoryId: string;
+            strength: string | null;
+            photoUrl: string | null;
+            quantity: number;
+            price: number;
+            Indications: string | null;
+            Pharmacology: string | null;
+            dosage: string | null;
+            side_effects: string | null;
+            warnings: string | null;
+            sellerId: string;
+        })[];
     }>;
-    getMedicineById: (id: string) => Promise<any>;
-    updateMedicine: (id: string, sellerId: string, payload: IupdateMedicine) => Promise<any>;
+    getMedicineById: (id: string) => Promise<({
+        seller: {
+            name: string | null;
+            id: string;
+            email: string;
+        };
+    } & {
+        name: string;
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        type: import("../../../../generated/prisma/enums").MedicineType;
+        generic_name: string | null;
+        company: string;
+        categoryId: string;
+        strength: string | null;
+        photoUrl: string | null;
+        quantity: number;
+        price: number;
+        Indications: string | null;
+        Pharmacology: string | null;
+        dosage: string | null;
+        side_effects: string | null;
+        warnings: string | null;
+        sellerId: string;
+    }) | null>;
+    updateMedicine: (id: string, sellerId: string, payload: IupdateMedicine) => Promise<{
+        name: string;
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        type: import("../../../../generated/prisma/enums").MedicineType;
+        generic_name: string | null;
+        company: string;
+        categoryId: string;
+        strength: string | null;
+        photoUrl: string | null;
+        quantity: number;
+        price: number;
+        Indications: string | null;
+        Pharmacology: string | null;
+        dosage: string | null;
+        side_effects: string | null;
+        warnings: string | null;
+        sellerId: string;
+    }>;
     removeMedicine: (id: string, currentUser: IauthUser) => Promise<void>;
 };
 //# sourceMappingURL=medicine.service.d.ts.map

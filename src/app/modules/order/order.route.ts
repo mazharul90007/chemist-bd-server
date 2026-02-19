@@ -3,7 +3,7 @@ import auth from "../../middlewares/auth";
 import { UserRole } from "../../../../generated/prisma/enums";
 import { orderController } from "./order.controller";
 
-const router = Router();
+const router: Router = Router();
 router.post(
   "/create",
   auth(UserRole.CUSTOMER),

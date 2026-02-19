@@ -5,12 +5,12 @@ export declare const auth: import("better-auth").Auth<{
         additionalFields: {
             role: {
                 type: "string";
-                defaultValue: any;
+                defaultValue: "CUSTOMER";
                 required: true;
             };
             status: {
                 type: "string";
-                defaultValue: any;
+                defaultValue: "ACTIVE";
                 required: true;
             };
         };

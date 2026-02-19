@@ -1,2 +1,3 @@
-export declare const cartRoutes: import("express-serve-static-core").Router;
+import { Router } from "express";
+export declare const cartRoutes: Router;
 //# sourceMappingURL=cart.route.d.ts.map

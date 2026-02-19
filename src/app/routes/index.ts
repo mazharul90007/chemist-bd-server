@@ -6,7 +6,7 @@ import { categoryRoutes } from "../modules/category/category.route";
 import { orderRoutes } from "../modules/order/order.route";
 import { cartRoutes } from "../modules/cart/cart.route";
 
-const router = express.Router();
+const router: express.Router = express.Router();
 
 const moduleRoutes = [
   {

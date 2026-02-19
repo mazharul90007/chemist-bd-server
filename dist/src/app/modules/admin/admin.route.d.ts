@@ -1,2 +1,3 @@
-export declare const adminRoutes: import("express-serve-static-core").Router;
+import { Router } from "express";
+export declare const adminRoutes: Router;
 //# sourceMappingURL=admin.route.d.ts.map
