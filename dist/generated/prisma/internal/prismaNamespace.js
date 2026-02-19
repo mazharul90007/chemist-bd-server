@@ -71,6 +71,8 @@ export const ModelName = {
     Session: 'Session',
     Account: 'Account',
     Verification: 'Verification',
+    Cart: 'Cart',
+    CartItem: 'CartItem',
     MedicineCategory: 'MedicineCategory',
     Medicine: 'Medicine',
     Order: 'Order',
@@ -130,6 +132,18 @@ export const VerificationScalarFieldEnum = {
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
 };
+export const CartScalarFieldEnum = {
+    id: 'id',
+    userId: 'userId',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+};
+export const CartItemScalarFieldEnum = {
+    id: 'id',
+    cartId: 'cartId',
+    medicineId: 'medicineId',
+    quantity: 'quantity'
+};
 export const MedicineCategoryScalarFieldEnum = {
     id: 'id',
     categoryName: 'categoryName',
@@ -165,6 +179,8 @@ export const OrderScalarFieldEnum = {
     dueAmount: 'dueAmount',
     paymentStatus: 'paymentStatus',
     customerId: 'customerId',
+    shippingAddress: 'shippingAddress',
+    contactNumber: 'contactNumber',
     status: 'status',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'

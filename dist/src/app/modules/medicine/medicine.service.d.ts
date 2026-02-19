@@ -1,24 +1,17 @@
-import { IcreateMedicine } from "./medicine.type";
+import { IauthUser } from "../../../types/common";
+import { IcreateMedicine, IupdateMedicine } from "./medicine.type";
 export declare const medicineService: {
-    createMedicine: (payload: IcreateMedicine) => Promise<{
-        name: string;
-        id: string;
-        createdAt: Date;
-        updatedAt: Date;
-        type: import("../../../../generated/prisma/enums").MedicineType;
-        generic_name: string | null;
-        strength: string | null;
-        company: string;
-        photoUrl: string | null;
-        quantity: number;
-        price: number;
-        Indications: string | null;
-        Pharmacology: string | null;
-        dosage: string | null;
-        side_effects: string | null;
-        warnings: string | null;
-        sellerId: string;
-        categoryId: string;
+    createMedicine: (payload: IcreateMedicine) => Promise<any>;
+    getAllMedicines: (filters: any, options: any) => Promise<{
+        meta: {
+            page: number;
+            limit: number;
+            total: any;
+        };
+        data: any;
     }>;
+    getMedicineById: (id: string) => Promise<any>;
+    updateMedicine: (id: string, sellerId: string, payload: IupdateMedicine) => Promise<any>;
+    removeMedicine: (id: string, currentUser: IauthUser) => Promise<void>;
 };
 //# sourceMappingURL=medicine.service.d.ts.map
