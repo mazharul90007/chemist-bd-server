@@ -1,13 +1,5 @@
 export declare const authServices: {
     getUserById: (id: string) => Promise<{
-        reviews: {
-            status: import("../../../../generated/prisma/enums").ReviewStatus;
-            id: string;
-            createdAt: Date;
-            updatedAt: Date;
-            userId: string;
-            medicineId: string;
-        }[];
         orders: {
             status: import("../../../../generated/prisma/enums").OrderStatus;
             id: string;
@@ -17,9 +9,17 @@ export declare const authServices: {
             totalAmount: number;
             dueAmount: number;
             paymentStatus: import("../../../../generated/prisma/enums").PaymentStatus;
-            shippingAddress: string;
             contactNumber: string;
+            shippingAddress: string;
             customerId: string;
+        }[];
+        reviews: {
+            status: import("../../../../generated/prisma/enums").ReviewStatus;
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            userId: string;
+            medicineId: string;
         }[];
     } & {
         name: string | null;

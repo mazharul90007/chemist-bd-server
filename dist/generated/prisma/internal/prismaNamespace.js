@@ -168,6 +168,8 @@ export const MedicineScalarFieldEnum = {
     categoryId: 'categoryId',
     dosage: 'dosage',
     side_effects: 'side_effects',
+    popular: 'popular',
+    rating: 'rating',
     warnings: 'warnings',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
@@ -179,11 +181,11 @@ export const OrderScalarFieldEnum = {
     dueAmount: 'dueAmount',
     paymentStatus: 'paymentStatus',
     customerId: 'customerId',
-    shippingAddress: 'shippingAddress',
-    contactNumber: 'contactNumber',
     status: 'status',
     createdAt: 'createdAt',
-    updatedAt: 'updatedAt'
+    updatedAt: 'updatedAt',
+    contactNumber: 'contactNumber',
+    shippingAddress: 'shippingAddress'
 };
 export const OrderItemScalarFieldEnum = {
     id: 'id',

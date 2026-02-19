@@ -130,16 +130,16 @@ export type CartWhereInput = {
     userId?: Prisma.StringFilter<"Cart"> | string;
     createdAt?: Prisma.DateTimeFilter<"Cart"> | Date | string;
     updatedAt?: Prisma.DateTimeFilter<"Cart"> | Date | string;
-    user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>;
     cartItems?: Prisma.CartItemListRelationFilter;
+    user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>;
 };
 export type CartOrderByWithRelationInput = {
     id?: Prisma.SortOrder;
     userId?: Prisma.SortOrder;
     createdAt?: Prisma.SortOrder;
     updatedAt?: Prisma.SortOrder;
-    user?: Prisma.UserOrderByWithRelationInput;
     cartItems?: Prisma.CartItemOrderByRelationAggregateInput;
+    user?: Prisma.UserOrderByWithRelationInput;
 };
 export type CartWhereUniqueInput = Prisma.AtLeast<{
     id?: string;
@@ -149,8 +149,8 @@ export type CartWhereUniqueInput = Prisma.AtLeast<{
     NOT?: Prisma.CartWhereInput | Prisma.CartWhereInput[];
     createdAt?: Prisma.DateTimeFilter<"Cart"> | Date | string;
     updatedAt?: Prisma.DateTimeFilter<"Cart"> | Date | string;
-    user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>;
     cartItems?: Prisma.CartItemListRelationFilter;
+    user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>;
 }, "id" | "userId">;
 export type CartOrderByWithAggregationInput = {
     id?: Prisma.SortOrder;
@@ -174,8 +174,8 @@ export type CartCreateInput = {
     id?: string;
     createdAt?: Date | string;
     updatedAt?: Date | string;
-    user: Prisma.UserCreateNestedOneWithoutCartInput;
     cartItems?: Prisma.CartItemCreateNestedManyWithoutCartInput;
+    user: Prisma.UserCreateNestedOneWithoutCartInput;
 };
 export type CartUncheckedCreateInput = {
     id?: string;
@@ -188,8 +188,8 @@ export type CartUpdateInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
-    user?: Prisma.UserUpdateOneRequiredWithoutCartNestedInput;
     cartItems?: Prisma.CartItemUpdateManyWithoutCartNestedInput;
+    user?: Prisma.UserUpdateOneRequiredWithoutCartNestedInput;
 };
 export type CartUncheckedUpdateInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
@@ -384,8 +384,8 @@ export type CartSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
     userId?: boolean;
     createdAt?: boolean;
     updatedAt?: boolean;
-    user?: boolean | Prisma.UserDefaultArgs<ExtArgs>;
     cartItems?: boolean | Prisma.Cart$cartItemsArgs<ExtArgs>;
+    user?: boolean | Prisma.UserDefaultArgs<ExtArgs>;
     _count?: boolean | Prisma.CartCountOutputTypeDefaultArgs<ExtArgs>;
 }, ExtArgs["result"]["cart"]>;
 export type CartSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -410,8 +410,8 @@ export type CartSelectScalar = {
 };
 export type CartOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "createdAt" | "updatedAt", ExtArgs["result"]["cart"]>;
 export type CartInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-    user?: boolean | Prisma.UserDefaultArgs<ExtArgs>;
     cartItems?: boolean | Prisma.Cart$cartItemsArgs<ExtArgs>;
+    user?: boolean | Prisma.UserDefaultArgs<ExtArgs>;
     _count?: boolean | Prisma.CartCountOutputTypeDefaultArgs<ExtArgs>;
 };
 export type CartIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -423,8 +423,8 @@ export type CartIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensi
 export type $CartPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
     name: "Cart";
     objects: {
-        user: Prisma.$UserPayload<ExtArgs>;
         cartItems: Prisma.$CartItemPayload<ExtArgs>[];
+        user: Prisma.$UserPayload<ExtArgs>;
     };
     scalars: runtime.Types.Extensions.GetPayloadResult<{
         id: string;
@@ -760,8 +760,8 @@ export interface CartDelegate<ExtArgs extends runtime.Types.Extensions.InternalA
  */
 export interface Prisma__CartClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise";
-    user<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
     cartItems<T extends Prisma.Cart$cartItemsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Cart$cartItemsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CartItemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
+    user<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.

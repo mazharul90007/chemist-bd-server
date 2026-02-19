@@ -1,35 +1,37 @@
 model Medicine {
-    id           String           @id @default(uuid())
-    sellerId     String
-    seller       User             @relation(fields: [sellerId], references: [id])
-    name         String
-    generic_name String?
-    strength     String?
-    company      String
-    photoUrl     String?
-    quantity     Int
-    price        Int
-    Indications  String?
-    Pharmacology String?
-    type         MedicineType     @default(OTHER)
-    categoryId   String
-    category     MedicineCategory @relation(fields: [categoryId], references: [id])
-    dosage       String?
-    side_effects String?
-    warnings     String?
-    createdAt    DateTime         @default(now())
-    updatedAt    DateTime         @updatedAt
-    reviews      Review[]
-    orderItems   OrderItem[]
-    cartItems    CartItem[]
+  id           String           @id @default(uuid())
+  sellerId     String
+  name         String
+  generic_name String?
+  strength     String?
+  company      String
+  photoUrl     String?
+  quantity     Int
+  price        Int
+  Indications  String?
+  Pharmacology String?
+  type         MedicineType     @default(OTHER)
+  categoryId   String
+  dosage       String?
+  side_effects String?
+  popular      Boolean?         @default(false)
+  rating       Int?
+  warnings     String?
+  createdAt    DateTime         @default(now())
+  updatedAt    DateTime         @updatedAt
+  cartItems    CartItem[]
+  category     MedicineCategory @relation(fields: [categoryId], references: [id])
+  seller       User             @relation(fields: [sellerId], references: [id])
+  orderItems   OrderItem[]
+  reviews      Review[]
 
-    @@index([company, price])
-    @@map("medicines")
+  @@index([company, price])
+  @@map("medicines")
 }
 
 enum MedicineType {
-    SYRUP
-    TABLET
-    CAPSULE
-    OTHER
+  SYRUP
+  TABLET
+  CAPSULE
+  OTHER
 }

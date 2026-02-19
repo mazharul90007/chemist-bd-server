@@ -4,4 +4,5 @@ export const medicineFilterableFields = [
   "minPrice",
   "maxPrice",
   "categoryId",
+  "popular",
 ];

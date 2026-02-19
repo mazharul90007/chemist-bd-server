@@ -21,7 +21,7 @@ const createMedicine = async (payload: IcreateMedicine) => {
 
 //================Get all medicines with pagination & filters =================
 const getAllMedicines = async (filters: any, options: any) => {
-  const { searchTerm, minPrice, maxPrice, categoryId } = filters;
+  const { searchTerm, minPrice, maxPrice, categoryId, popular } = filters;
 
   const { page, limit, skip, sortBy, sortOrder } = calculatePagination(options);
 
@@ -48,6 +48,11 @@ const getAllMedicines = async (filters: any, options: any) => {
   //Category filtere
   if (categoryId) {
     where.categoryId = categoryId;
+  }
+
+  //Popular filter
+  if (popular !== undefined) {
+    where.popular = popular === "true" || popular === true;
   }
 
   //Now fetch data with pagination and sorting

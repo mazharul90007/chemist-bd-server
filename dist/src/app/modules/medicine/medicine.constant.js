@@ -4,5 +4,6 @@ export const medicineFilterableFields = [
     "minPrice",
     "maxPrice",
     "categoryId",
+    "popular",
 ];
 //# sourceMappingURL=medicine.constant.js.map

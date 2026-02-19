@@ -15,7 +15,7 @@ const createMedicine = async (payload) => {
 };
 //================Get all medicines with pagination & filters =================
 const getAllMedicines = async (filters, options) => {
-    const { searchTerm, minPrice, maxPrice, categoryId } = filters;
+    const { searchTerm, minPrice, maxPrice, categoryId, popular } = filters;
     const { page, limit, skip, sortBy, sortOrder } = calculatePagination(options);
     const where = {};
     //search logic
@@ -37,6 +37,10 @@ const getAllMedicines = async (filters, options) => {
     //Category filtere
     if (categoryId) {
         where.categoryId = categoryId;
+    }
+    //Popular filter
+    if (popular !== undefined) {
+        where.popular = popular === "true" || popular === true;
     }
     //Now fetch data with pagination and sorting
     const result = await prisma.medicine.findMany({

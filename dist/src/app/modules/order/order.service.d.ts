@@ -13,8 +13,8 @@ export declare const orderService: {
         totalAmount: number;
         dueAmount: number;
         paymentStatus: import("../../../../generated/prisma/enums").PaymentStatus;
-        shippingAddress: string;
         contactNumber: string;
+        shippingAddress: string;
         customerId: string;
     }>;
     getMyOrders: (userId: string, filters: any, options: any) => Promise<{
@@ -34,6 +34,7 @@ export declare const orderService: {
                     generic_name: string | null;
                     company: string;
                     categoryId: string;
+                    popular: boolean | null;
                     strength: string | null;
                     photoUrl: string | null;
                     quantity: number;
@@ -42,6 +43,7 @@ export declare const orderService: {
                     Pharmacology: string | null;
                     dosage: string | null;
                     side_effects: string | null;
+                    rating: number | null;
                     warnings: string | null;
                     sellerId: string;
                 };
@@ -61,8 +63,8 @@ export declare const orderService: {
             totalAmount: number;
             dueAmount: number;
             paymentStatus: import("../../../../generated/prisma/enums").PaymentStatus;
-            shippingAddress: string;
             contactNumber: string;
+            shippingAddress: string;
             customerId: string;
         })[];
     }>;
@@ -77,6 +79,7 @@ export declare const orderService: {
                 generic_name: string | null;
                 company: string;
                 categoryId: string;
+                popular: boolean | null;
                 strength: string | null;
                 photoUrl: string | null;
                 quantity: number;
@@ -85,6 +88,7 @@ export declare const orderService: {
                 Pharmacology: string | null;
                 dosage: string | null;
                 side_effects: string | null;
+                rating: number | null;
                 warnings: string | null;
                 sellerId: string;
             };
@@ -109,8 +113,8 @@ export declare const orderService: {
         totalAmount: number;
         dueAmount: number;
         paymentStatus: import("../../../../generated/prisma/enums").PaymentStatus;
-        shippingAddress: string;
         contactNumber: string;
+        shippingAddress: string;
         customerId: string;
     }>;
     updateOrderStatus: (orderId: string, status: OrderStatus, user: {
@@ -125,8 +129,8 @@ export declare const orderService: {
         totalAmount: number;
         dueAmount: number;
         paymentStatus: import("../../../../generated/prisma/enums").PaymentStatus;
-        shippingAddress: string;
         contactNumber: string;
+        shippingAddress: string;
         customerId: string;
     }>;
     getSellerOrders: (sellerId: string, filters: any, options: any) => Promise<{
@@ -146,6 +150,7 @@ export declare const orderService: {
                     generic_name: string | null;
                     company: string;
                     categoryId: string;
+                    popular: boolean | null;
                     strength: string | null;
                     photoUrl: string | null;
                     quantity: number;
@@ -154,6 +159,7 @@ export declare const orderService: {
                     Pharmacology: string | null;
                     dosage: string | null;
                     side_effects: string | null;
+                    rating: number | null;
                     warnings: string | null;
                     sellerId: string;
                 };
@@ -178,8 +184,8 @@ export declare const orderService: {
             totalAmount: number;
             dueAmount: number;
             paymentStatus: import("../../../../generated/prisma/enums").PaymentStatus;
-            shippingAddress: string;
             contactNumber: string;
+            shippingAddress: string;
             customerId: string;
         })[];
     }>;
@@ -192,8 +198,8 @@ export declare const orderService: {
         totalAmount: number;
         dueAmount: number;
         paymentStatus: import("../../../../generated/prisma/enums").PaymentStatus;
-        shippingAddress: string;
         contactNumber: string;
+        shippingAddress: string;
         customerId: string;
     }>;
 };

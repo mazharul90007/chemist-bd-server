@@ -171,12 +171,12 @@ export type UserWhereInput = {
     status?: Prisma.EnumUserStatusFilter<"User"> | $Enums.UserStatus;
     createdAt?: Prisma.DateTimeFilter<"User"> | Date | string;
     updatedAt?: Prisma.DateTimeFilter<"User"> | Date | string;
-    sessions?: Prisma.SessionListRelationFilter;
     accounts?: Prisma.AccountListRelationFilter;
-    medicines?: Prisma.MedicineListRelationFilter;
-    reviews?: Prisma.ReviewListRelationFilter;
-    orders?: Prisma.OrderListRelationFilter;
     cart?: Prisma.XOR<Prisma.CartNullableScalarRelationFilter, Prisma.CartWhereInput> | null;
+    medicines?: Prisma.MedicineListRelationFilter;
+    orders?: Prisma.OrderListRelationFilter;
+    reviews?: Prisma.ReviewListRelationFilter;
+    sessions?: Prisma.SessionListRelationFilter;
 };
 export type UserOrderByWithRelationInput = {
     id?: Prisma.SortOrder;
@@ -188,12 +188,12 @@ export type UserOrderByWithRelationInput = {
     status?: Prisma.SortOrder;
     createdAt?: Prisma.SortOrder;
     updatedAt?: Prisma.SortOrder;
-    sessions?: Prisma.SessionOrderByRelationAggregateInput;
     accounts?: Prisma.AccountOrderByRelationAggregateInput;
-    medicines?: Prisma.MedicineOrderByRelationAggregateInput;
-    reviews?: Prisma.ReviewOrderByRelationAggregateInput;
-    orders?: Prisma.OrderOrderByRelationAggregateInput;
     cart?: Prisma.CartOrderByWithRelationInput;
+    medicines?: Prisma.MedicineOrderByRelationAggregateInput;
+    orders?: Prisma.OrderOrderByRelationAggregateInput;
+    reviews?: Prisma.ReviewOrderByRelationAggregateInput;
+    sessions?: Prisma.SessionOrderByRelationAggregateInput;
 };
 export type UserWhereUniqueInput = Prisma.AtLeast<{
     id?: string;
@@ -208,12 +208,12 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
     status?: Prisma.EnumUserStatusFilter<"User"> | $Enums.UserStatus;
     createdAt?: Prisma.DateTimeFilter<"User"> | Date | string;
     updatedAt?: Prisma.DateTimeFilter<"User"> | Date | string;
-    sessions?: Prisma.SessionListRelationFilter;
     accounts?: Prisma.AccountListRelationFilter;
-    medicines?: Prisma.MedicineListRelationFilter;
-    reviews?: Prisma.ReviewListRelationFilter;
-    orders?: Prisma.OrderListRelationFilter;
     cart?: Prisma.XOR<Prisma.CartNullableScalarRelationFilter, Prisma.CartWhereInput> | null;
+    medicines?: Prisma.MedicineListRelationFilter;
+    orders?: Prisma.OrderListRelationFilter;
+    reviews?: Prisma.ReviewListRelationFilter;
+    sessions?: Prisma.SessionListRelationFilter;
 }, "id" | "email">;
 export type UserOrderByWithAggregationInput = {
     id?: Prisma.SortOrder;
@@ -253,12 +253,12 @@ export type UserCreateInput = {
     status?: $Enums.UserStatus;
     createdAt?: Date | string;
     updatedAt?: Date | string;
-    sessions?: Prisma.SessionCreateNestedManyWithoutUserInput;
     accounts?: Prisma.AccountCreateNestedManyWithoutUserInput;
-    medicines?: Prisma.MedicineCreateNestedManyWithoutSellerInput;
-    reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput;
-    orders?: Prisma.OrderCreateNestedManyWithoutCustomerInput;
     cart?: Prisma.CartCreateNestedOneWithoutUserInput;
+    medicines?: Prisma.MedicineCreateNestedManyWithoutSellerInput;
+    orders?: Prisma.OrderCreateNestedManyWithoutCustomerInput;
+    reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput;
+    sessions?: Prisma.SessionCreateNestedManyWithoutUserInput;
 };
 export type UserUncheckedCreateInput = {
     id?: string;
@@ -270,12 +270,12 @@ export type UserUncheckedCreateInput = {
     status?: $Enums.UserStatus;
     createdAt?: Date | string;
     updatedAt?: Date | string;
-    sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput;
     accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput;
-    medicines?: Prisma.MedicineUncheckedCreateNestedManyWithoutSellerInput;
-    reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput;
-    orders?: Prisma.OrderUncheckedCreateNestedManyWithoutCustomerInput;
     cart?: Prisma.CartUncheckedCreateNestedOneWithoutUserInput;
+    medicines?: Prisma.MedicineUncheckedCreateNestedManyWithoutSellerInput;
+    orders?: Prisma.OrderUncheckedCreateNestedManyWithoutCustomerInput;
+    reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput;
+    sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput;
 };
 export type UserUpdateInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
@@ -287,12 +287,12 @@ export type UserUpdateInput = {
     status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
-    sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput;
     accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput;
-    medicines?: Prisma.MedicineUpdateManyWithoutSellerNestedInput;
-    reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput;
-    orders?: Prisma.OrderUpdateManyWithoutCustomerNestedInput;
     cart?: Prisma.CartUpdateOneWithoutUserNestedInput;
+    medicines?: Prisma.MedicineUpdateManyWithoutSellerNestedInput;
+    orders?: Prisma.OrderUpdateManyWithoutCustomerNestedInput;
+    reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput;
+    sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput;
 };
 export type UserUncheckedUpdateInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
@@ -304,12 +304,12 @@ export type UserUncheckedUpdateInput = {
     status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
-    sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput;
     accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput;
-    medicines?: Prisma.MedicineUncheckedUpdateManyWithoutSellerNestedInput;
-    reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput;
-    orders?: Prisma.OrderUncheckedUpdateManyWithoutCustomerNestedInput;
     cart?: Prisma.CartUncheckedUpdateOneWithoutUserNestedInput;
+    medicines?: Prisma.MedicineUncheckedUpdateManyWithoutSellerNestedInput;
+    orders?: Prisma.OrderUncheckedUpdateManyWithoutCustomerNestedInput;
+    reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput;
+    sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput;
 };
 export type UserCreateManyInput = {
     id?: string;
@@ -482,10 +482,10 @@ export type UserCreateWithoutSessionsInput = {
     createdAt?: Date | string;
     updatedAt?: Date | string;
     accounts?: Prisma.AccountCreateNestedManyWithoutUserInput;
-    medicines?: Prisma.MedicineCreateNestedManyWithoutSellerInput;
-    reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput;
-    orders?: Prisma.OrderCreateNestedManyWithoutCustomerInput;
     cart?: Prisma.CartCreateNestedOneWithoutUserInput;
+    medicines?: Prisma.MedicineCreateNestedManyWithoutSellerInput;
+    orders?: Prisma.OrderCreateNestedManyWithoutCustomerInput;
+    reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput;
 };
 export type UserUncheckedCreateWithoutSessionsInput = {
     id?: string;
@@ -498,10 +498,10 @@ export type UserUncheckedCreateWithoutSessionsInput = {
     createdAt?: Date | string;
     updatedAt?: Date | string;
     accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput;
-    medicines?: Prisma.MedicineUncheckedCreateNestedManyWithoutSellerInput;
-    reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput;
-    orders?: Prisma.OrderUncheckedCreateNestedManyWithoutCustomerInput;
     cart?: Prisma.CartUncheckedCreateNestedOneWithoutUserInput;
+    medicines?: Prisma.MedicineUncheckedCreateNestedManyWithoutSellerInput;
+    orders?: Prisma.OrderUncheckedCreateNestedManyWithoutCustomerInput;
+    reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput;
 };
 export type UserCreateOrConnectWithoutSessionsInput = {
     where: Prisma.UserWhereUniqueInput;
@@ -527,10 +527,10 @@ export type UserUpdateWithoutSessionsInput = {
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput;
-    medicines?: Prisma.MedicineUpdateManyWithoutSellerNestedInput;
-    reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput;
-    orders?: Prisma.OrderUpdateManyWithoutCustomerNestedInput;
     cart?: Prisma.CartUpdateOneWithoutUserNestedInput;
+    medicines?: Prisma.MedicineUpdateManyWithoutSellerNestedInput;
+    orders?: Prisma.OrderUpdateManyWithoutCustomerNestedInput;
+    reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput;
 };
 export type UserUncheckedUpdateWithoutSessionsInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
@@ -543,10 +543,10 @@ export type UserUncheckedUpdateWithoutSessionsInput = {
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput;
-    medicines?: Prisma.MedicineUncheckedUpdateManyWithoutSellerNestedInput;
-    reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput;
-    orders?: Prisma.OrderUncheckedUpdateManyWithoutCustomerNestedInput;
     cart?: Prisma.CartUncheckedUpdateOneWithoutUserNestedInput;
+    medicines?: Prisma.MedicineUncheckedUpdateManyWithoutSellerNestedInput;
+    orders?: Prisma.OrderUncheckedUpdateManyWithoutCustomerNestedInput;
+    reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput;
 };
 export type UserCreateWithoutAccountsInput = {
     id?: string;
@@ -558,11 +558,11 @@ export type UserCreateWithoutAccountsInput = {
     status?: $Enums.UserStatus;
     createdAt?: Date | string;
     updatedAt?: Date | string;
-    sessions?: Prisma.SessionCreateNestedManyWithoutUserInput;
-    medicines?: Prisma.MedicineCreateNestedManyWithoutSellerInput;
-    reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput;
-    orders?: Prisma.OrderCreateNestedManyWithoutCustomerInput;
     cart?: Prisma.CartCreateNestedOneWithoutUserInput;
+    medicines?: Prisma.MedicineCreateNestedManyWithoutSellerInput;
+    orders?: Prisma.OrderCreateNestedManyWithoutCustomerInput;
+    reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput;
+    sessions?: Prisma.SessionCreateNestedManyWithoutUserInput;
 };
 export type UserUncheckedCreateWithoutAccountsInput = {
     id?: string;
@@ -574,11 +574,11 @@ export type UserUncheckedCreateWithoutAccountsInput = {
     status?: $Enums.UserStatus;
     createdAt?: Date | string;
     updatedAt?: Date | string;
-    sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput;
-    medicines?: Prisma.MedicineUncheckedCreateNestedManyWithoutSellerInput;
-    reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput;
-    orders?: Prisma.OrderUncheckedCreateNestedManyWithoutCustomerInput;
     cart?: Prisma.CartUncheckedCreateNestedOneWithoutUserInput;
+    medicines?: Prisma.MedicineUncheckedCreateNestedManyWithoutSellerInput;
+    orders?: Prisma.OrderUncheckedCreateNestedManyWithoutCustomerInput;
+    reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput;
+    sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput;
 };
 export type UserCreateOrConnectWithoutAccountsInput = {
     where: Prisma.UserWhereUniqueInput;
@@ -603,11 +603,11 @@ export type UserUpdateWithoutAccountsInput = {
     status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
-    sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput;
-    medicines?: Prisma.MedicineUpdateManyWithoutSellerNestedInput;
-    reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput;
-    orders?: Prisma.OrderUpdateManyWithoutCustomerNestedInput;
     cart?: Prisma.CartUpdateOneWithoutUserNestedInput;
+    medicines?: Prisma.MedicineUpdateManyWithoutSellerNestedInput;
+    orders?: Prisma.OrderUpdateManyWithoutCustomerNestedInput;
+    reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput;
+    sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput;
 };
 export type UserUncheckedUpdateWithoutAccountsInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
@@ -619,11 +619,11 @@ export type UserUncheckedUpdateWithoutAccountsInput = {
     status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
-    sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput;
-    medicines?: Prisma.MedicineUncheckedUpdateManyWithoutSellerNestedInput;
-    reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput;
-    orders?: Prisma.OrderUncheckedUpdateManyWithoutCustomerNestedInput;
     cart?: Prisma.CartUncheckedUpdateOneWithoutUserNestedInput;
+    medicines?: Prisma.MedicineUncheckedUpdateManyWithoutSellerNestedInput;
+    orders?: Prisma.OrderUncheckedUpdateManyWithoutCustomerNestedInput;
+    reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput;
+    sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput;
 };
 export type UserCreateWithoutCartInput = {
     id?: string;
@@ -635,11 +635,11 @@ export type UserCreateWithoutCartInput = {
     status?: $Enums.UserStatus;
     createdAt?: Date | string;
     updatedAt?: Date | string;
-    sessions?: Prisma.SessionCreateNestedManyWithoutUserInput;
     accounts?: Prisma.AccountCreateNestedManyWithoutUserInput;
     medicines?: Prisma.MedicineCreateNestedManyWithoutSellerInput;
-    reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput;
     orders?: Prisma.OrderCreateNestedManyWithoutCustomerInput;
+    reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput;
+    sessions?: Prisma.SessionCreateNestedManyWithoutUserInput;
 };
 export type UserUncheckedCreateWithoutCartInput = {
     id?: string;
@@ -651,11 +651,11 @@ export type UserUncheckedCreateWithoutCartInput = {
     status?: $Enums.UserStatus;
     createdAt?: Date | string;
     updatedAt?: Date | string;
-    sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput;
     accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput;
     medicines?: Prisma.MedicineUncheckedCreateNestedManyWithoutSellerInput;
-    reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput;
     orders?: Prisma.OrderUncheckedCreateNestedManyWithoutCustomerInput;
+    reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput;
+    sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput;
 };
 export type UserCreateOrConnectWithoutCartInput = {
     where: Prisma.UserWhereUniqueInput;
@@ -680,11 +680,11 @@ export type UserUpdateWithoutCartInput = {
     status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
-    sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput;
     accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput;
     medicines?: Prisma.MedicineUpdateManyWithoutSellerNestedInput;
-    reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput;
     orders?: Prisma.OrderUpdateManyWithoutCustomerNestedInput;
+    reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput;
+    sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput;
 };
 export type UserUncheckedUpdateWithoutCartInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
@@ -696,11 +696,11 @@ export type UserUncheckedUpdateWithoutCartInput = {
     status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
-    sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput;
     accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput;
     medicines?: Prisma.MedicineUncheckedUpdateManyWithoutSellerNestedInput;
-    reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput;
     orders?: Prisma.OrderUncheckedUpdateManyWithoutCustomerNestedInput;
+    reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput;
+    sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput;
 };
 export type UserCreateWithoutMedicinesInput = {
     id?: string;
@@ -712,11 +712,11 @@ export type UserCreateWithoutMedicinesInput = {
     status?: $Enums.UserStatus;
     createdAt?: Date | string;
     updatedAt?: Date | string;
-    sessions?: Prisma.SessionCreateNestedManyWithoutUserInput;
     accounts?: Prisma.AccountCreateNestedManyWithoutUserInput;
-    reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput;
-    orders?: Prisma.OrderCreateNestedManyWithoutCustomerInput;
     cart?: Prisma.CartCreateNestedOneWithoutUserInput;
+    orders?: Prisma.OrderCreateNestedManyWithoutCustomerInput;
+    reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput;
+    sessions?: Prisma.SessionCreateNestedManyWithoutUserInput;
 };
 export type UserUncheckedCreateWithoutMedicinesInput = {
     id?: string;
@@ -728,11 +728,11 @@ export type UserUncheckedCreateWithoutMedicinesInput = {
     status?: $Enums.UserStatus;
     createdAt?: Date | string;
     updatedAt?: Date | string;
-    sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput;
     accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput;
-    reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput;
-    orders?: Prisma.OrderUncheckedCreateNestedManyWithoutCustomerInput;
     cart?: Prisma.CartUncheckedCreateNestedOneWithoutUserInput;
+    orders?: Prisma.OrderUncheckedCreateNestedManyWithoutCustomerInput;
+    reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput;
+    sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput;
 };
 export type UserCreateOrConnectWithoutMedicinesInput = {
     where: Prisma.UserWhereUniqueInput;
@@ -757,11 +757,11 @@ export type UserUpdateWithoutMedicinesInput = {
     status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
-    sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput;
     accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput;
-    reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput;
-    orders?: Prisma.OrderUpdateManyWithoutCustomerNestedInput;
     cart?: Prisma.CartUpdateOneWithoutUserNestedInput;
+    orders?: Prisma.OrderUpdateManyWithoutCustomerNestedInput;
+    reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput;
+    sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput;
 };
 export type UserUncheckedUpdateWithoutMedicinesInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
@@ -773,11 +773,11 @@ export type UserUncheckedUpdateWithoutMedicinesInput = {
     status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
-    sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput;
     accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput;
-    reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput;
-    orders?: Prisma.OrderUncheckedUpdateManyWithoutCustomerNestedInput;
     cart?: Prisma.CartUncheckedUpdateOneWithoutUserNestedInput;
+    orders?: Prisma.OrderUncheckedUpdateManyWithoutCustomerNestedInput;
+    reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput;
+    sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput;
 };
 export type UserCreateWithoutOrdersInput = {
     id?: string;
@@ -789,11 +789,11 @@ export type UserCreateWithoutOrdersInput = {
     status?: $Enums.UserStatus;
     createdAt?: Date | string;
     updatedAt?: Date | string;
-    sessions?: Prisma.SessionCreateNestedManyWithoutUserInput;
     accounts?: Prisma.AccountCreateNestedManyWithoutUserInput;
+    cart?: Prisma.CartCreateNestedOneWithoutUserInput;
     medicines?: Prisma.MedicineCreateNestedManyWithoutSellerInput;
     reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput;
-    cart?: Prisma.CartCreateNestedOneWithoutUserInput;
+    sessions?: Prisma.SessionCreateNestedManyWithoutUserInput;
 };
 export type UserUncheckedCreateWithoutOrdersInput = {
     id?: string;
@@ -805,11 +805,11 @@ export type UserUncheckedCreateWithoutOrdersInput = {
     status?: $Enums.UserStatus;
     createdAt?: Date | string;
     updatedAt?: Date | string;
-    sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput;
     accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput;
+    cart?: Prisma.CartUncheckedCreateNestedOneWithoutUserInput;
     medicines?: Prisma.MedicineUncheckedCreateNestedManyWithoutSellerInput;
     reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput;
-    cart?: Prisma.CartUncheckedCreateNestedOneWithoutUserInput;
+    sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput;
 };
 export type UserCreateOrConnectWithoutOrdersInput = {
     where: Prisma.UserWhereUniqueInput;
@@ -834,11 +834,11 @@ export type UserUpdateWithoutOrdersInput = {
     status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
-    sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput;
     accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput;
+    cart?: Prisma.CartUpdateOneWithoutUserNestedInput;
     medicines?: Prisma.MedicineUpdateManyWithoutSellerNestedInput;
     reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput;
-    cart?: Prisma.CartUpdateOneWithoutUserNestedInput;
+    sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput;
 };
 export type UserUncheckedUpdateWithoutOrdersInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
@@ -850,11 +850,11 @@ export type UserUncheckedUpdateWithoutOrdersInput = {
     status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
-    sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput;
     accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput;
+    cart?: Prisma.CartUncheckedUpdateOneWithoutUserNestedInput;
     medicines?: Prisma.MedicineUncheckedUpdateManyWithoutSellerNestedInput;
     reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput;
-    cart?: Prisma.CartUncheckedUpdateOneWithoutUserNestedInput;
+    sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput;
 };
 export type UserCreateWithoutReviewsInput = {
     id?: string;
@@ -866,11 +866,11 @@ export type UserCreateWithoutReviewsInput = {
     status?: $Enums.UserStatus;
     createdAt?: Date | string;
     updatedAt?: Date | string;
-    sessions?: Prisma.SessionCreateNestedManyWithoutUserInput;
     accounts?: Prisma.AccountCreateNestedManyWithoutUserInput;
+    cart?: Prisma.CartCreateNestedOneWithoutUserInput;
     medicines?: Prisma.MedicineCreateNestedManyWithoutSellerInput;
     orders?: Prisma.OrderCreateNestedManyWithoutCustomerInput;
-    cart?: Prisma.CartCreateNestedOneWithoutUserInput;
+    sessions?: Prisma.SessionCreateNestedManyWithoutUserInput;
 };
 export type UserUncheckedCreateWithoutReviewsInput = {
     id?: string;
@@ -882,11 +882,11 @@ export type UserUncheckedCreateWithoutReviewsInput = {
     status?: $Enums.UserStatus;
     createdAt?: Date | string;
     updatedAt?: Date | string;
-    sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput;
     accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput;
+    cart?: Prisma.CartUncheckedCreateNestedOneWithoutUserInput;
     medicines?: Prisma.MedicineUncheckedCreateNestedManyWithoutSellerInput;
     orders?: Prisma.OrderUncheckedCreateNestedManyWithoutCustomerInput;
-    cart?: Prisma.CartUncheckedCreateNestedOneWithoutUserInput;
+    sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput;
 };
 export type UserCreateOrConnectWithoutReviewsInput = {
     where: Prisma.UserWhereUniqueInput;
@@ -911,11 +911,11 @@ export type UserUpdateWithoutReviewsInput = {
     status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
-    sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput;
     accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput;
+    cart?: Prisma.CartUpdateOneWithoutUserNestedInput;
     medicines?: Prisma.MedicineUpdateManyWithoutSellerNestedInput;
     orders?: Prisma.OrderUpdateManyWithoutCustomerNestedInput;
-    cart?: Prisma.CartUpdateOneWithoutUserNestedInput;
+    sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput;
 };
 export type UserUncheckedUpdateWithoutReviewsInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
@@ -927,28 +927,28 @@ export type UserUncheckedUpdateWithoutReviewsInput = {
     status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
-    sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput;
     accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput;
+    cart?: Prisma.CartUncheckedUpdateOneWithoutUserNestedInput;
     medicines?: Prisma.MedicineUncheckedUpdateManyWithoutSellerNestedInput;
     orders?: Prisma.OrderUncheckedUpdateManyWithoutCustomerNestedInput;
-    cart?: Prisma.CartUncheckedUpdateOneWithoutUserNestedInput;
+    sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput;
 };
 /**
  * Count Type UserCountOutputType
  */
 export type UserCountOutputType = {
-    sessions: number;
     accounts: number;
     medicines: number;
-    reviews: number;
     orders: number;
+    reviews: number;
+    sessions: number;
 };
 export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-    sessions?: boolean | UserCountOutputTypeCountSessionsArgs;
     accounts?: boolean | UserCountOutputTypeCountAccountsArgs;
     medicines?: boolean | UserCountOutputTypeCountMedicinesArgs;
-    reviews?: boolean | UserCountOutputTypeCountReviewsArgs;
     orders?: boolean | UserCountOutputTypeCountOrdersArgs;
+    reviews?: boolean | UserCountOutputTypeCountReviewsArgs;
+    sessions?: boolean | UserCountOutputTypeCountSessionsArgs;
 };
 /**
  * UserCountOutputType without action
@@ -958,12 +958,6 @@ export type UserCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensi
      * Select specific fields to fetch from the UserCountOutputType
      */
     select?: Prisma.UserCountOutputTypeSelect<ExtArgs> | null;
-};
-/**
- * UserCountOutputType without action
- */
-export type UserCountOutputTypeCountSessionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-    where?: Prisma.SessionWhereInput;
 };
 /**
  * UserCountOutputType without action
@@ -980,14 +974,20 @@ export type UserCountOutputTypeCountMedicinesArgs<ExtArgs extends runtime.Types.
 /**
  * UserCountOutputType without action
  */
+export type UserCountOutputTypeCountOrdersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    where?: Prisma.OrderWhereInput;
+};
+/**
+ * UserCountOutputType without action
+ */
 export type UserCountOutputTypeCountReviewsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
     where?: Prisma.ReviewWhereInput;
 };
 /**
  * UserCountOutputType without action
  */
-export type UserCountOutputTypeCountOrdersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-    where?: Prisma.OrderWhereInput;
+export type UserCountOutputTypeCountSessionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    where?: Prisma.SessionWhereInput;
 };
 export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
     id?: boolean;
@@ -999,12 +999,12 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
     status?: boolean;
     createdAt?: boolean;
     updatedAt?: boolean;
-    sessions?: boolean | Prisma.User$sessionsArgs<ExtArgs>;
     accounts?: boolean | Prisma.User$accountsArgs<ExtArgs>;
-    medicines?: boolean | Prisma.User$medicinesArgs<ExtArgs>;
-    reviews?: boolean | Prisma.User$reviewsArgs<ExtArgs>;
-    orders?: boolean | Prisma.User$ordersArgs<ExtArgs>;
     cart?: boolean | Prisma.User$cartArgs<ExtArgs>;
+    medicines?: boolean | Prisma.User$medicinesArgs<ExtArgs>;
+    orders?: boolean | Prisma.User$ordersArgs<ExtArgs>;
+    reviews?: boolean | Prisma.User$reviewsArgs<ExtArgs>;
+    sessions?: boolean | Prisma.User$sessionsArgs<ExtArgs>;
     _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>;
 }, ExtArgs["result"]["user"]>;
 export type UserSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -1042,12 +1042,12 @@ export type UserSelectScalar = {
 };
 export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "email" | "emailVerified" | "image" | "role" | "status" | "createdAt" | "updatedAt", ExtArgs["result"]["user"]>;
 export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-    sessions?: boolean | Prisma.User$sessionsArgs<ExtArgs>;
     accounts?: boolean | Prisma.User$accountsArgs<ExtArgs>;
-    medicines?: boolean | Prisma.User$medicinesArgs<ExtArgs>;
-    reviews?: boolean | Prisma.User$reviewsArgs<ExtArgs>;
-    orders?: boolean | Prisma.User$ordersArgs<ExtArgs>;
     cart?: boolean | Prisma.User$cartArgs<ExtArgs>;
+    medicines?: boolean | Prisma.User$medicinesArgs<ExtArgs>;
+    orders?: boolean | Prisma.User$ordersArgs<ExtArgs>;
+    reviews?: boolean | Prisma.User$reviewsArgs<ExtArgs>;
+    sessions?: boolean | Prisma.User$sessionsArgs<ExtArgs>;
     _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>;
 };
 export type UserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {};
@@ -1055,12 +1055,12 @@ export type UserIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensi
 export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
     name: "User";
     objects: {
-        sessions: Prisma.$SessionPayload<ExtArgs>[];
         accounts: Prisma.$AccountPayload<ExtArgs>[];
-        medicines: Prisma.$MedicinePayload<ExtArgs>[];
-        reviews: Prisma.$ReviewPayload<ExtArgs>[];
-        orders: Prisma.$OrderPayload<ExtArgs>[];
         cart: Prisma.$CartPayload<ExtArgs> | null;
+        medicines: Prisma.$MedicinePayload<ExtArgs>[];
+        orders: Prisma.$OrderPayload<ExtArgs>[];
+        reviews: Prisma.$ReviewPayload<ExtArgs>[];
+        sessions: Prisma.$SessionPayload<ExtArgs>[];
     };
     scalars: runtime.Types.Extensions.GetPayloadResult<{
         id: string;
@@ -1401,12 +1401,12 @@ export interface UserDelegate<ExtArgs extends runtime.Types.Extensions.InternalA
  */
 export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise";
-    sessions<T extends Prisma.User$sessionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$sessionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SessionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
     accounts<T extends Prisma.User$accountsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$accountsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AccountPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
-    medicines<T extends Prisma.User$medicinesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$medicinesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MedicinePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
-    reviews<T extends Prisma.User$reviewsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$reviewsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ReviewPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
-    orders<T extends Prisma.User$ordersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$ordersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$OrderPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
     cart<T extends Prisma.User$cartArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$cartArgs<ExtArgs>>): Prisma.Prisma__CartClient<runtime.Types.Result.GetResult<Prisma.$CartPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
+    medicines<T extends Prisma.User$medicinesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$medicinesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MedicinePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
+    orders<T extends Prisma.User$ordersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$ordersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$OrderPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
+    reviews<T extends Prisma.User$reviewsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$reviewsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ReviewPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
+    sessions<T extends Prisma.User$sessionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$sessionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SessionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1812,29 +1812,6 @@ export type UserDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Internal
     limit?: number;
 };
 /**
- * User.sessions
- */
-export type User$sessionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Session
-     */
-    select?: Prisma.SessionSelect<ExtArgs> | null;
-    /**
-     * Omit specific fields from the Session
-     */
-    omit?: Prisma.SessionOmit<ExtArgs> | null;
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: Prisma.SessionInclude<ExtArgs> | null;
-    where?: Prisma.SessionWhereInput;
-    orderBy?: Prisma.SessionOrderByWithRelationInput | Prisma.SessionOrderByWithRelationInput[];
-    cursor?: Prisma.SessionWhereUniqueInput;
-    take?: number;
-    skip?: number;
-    distinct?: Prisma.SessionScalarFieldEnum | Prisma.SessionScalarFieldEnum[];
-};
-/**
  * User.accounts
  */
 export type User$accountsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1856,6 +1833,24 @@ export type User$accountsArgs<ExtArgs extends runtime.Types.Extensions.InternalA
     take?: number;
     skip?: number;
     distinct?: Prisma.AccountScalarFieldEnum | Prisma.AccountScalarFieldEnum[];
+};
+/**
+ * User.cart
+ */
+export type User$cartArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Cart
+     */
+    select?: Prisma.CartSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the Cart
+     */
+    omit?: Prisma.CartOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.CartInclude<ExtArgs> | null;
+    where?: Prisma.CartWhereInput;
 };
 /**
  * User.medicines
@@ -1881,29 +1876,6 @@ export type User$medicinesArgs<ExtArgs extends runtime.Types.Extensions.Internal
     distinct?: Prisma.MedicineScalarFieldEnum | Prisma.MedicineScalarFieldEnum[];
 };
 /**
- * User.reviews
- */
-export type User$reviewsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Review
-     */
-    select?: Prisma.ReviewSelect<ExtArgs> | null;
-    /**
-     * Omit specific fields from the Review
-     */
-    omit?: Prisma.ReviewOmit<ExtArgs> | null;
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: Prisma.ReviewInclude<ExtArgs> | null;
-    where?: Prisma.ReviewWhereInput;
-    orderBy?: Prisma.ReviewOrderByWithRelationInput | Prisma.ReviewOrderByWithRelationInput[];
-    cursor?: Prisma.ReviewWhereUniqueInput;
-    take?: number;
-    skip?: number;
-    distinct?: Prisma.ReviewScalarFieldEnum | Prisma.ReviewScalarFieldEnum[];
-};
-/**
  * User.orders
  */
 export type User$ordersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1927,22 +1899,50 @@ export type User$ordersArgs<ExtArgs extends runtime.Types.Extensions.InternalArg
     distinct?: Prisma.OrderScalarFieldEnum | Prisma.OrderScalarFieldEnum[];
 };
 /**
- * User.cart
+ * User.reviews
  */
-export type User$cartArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type User$reviewsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Cart
+     * Select specific fields to fetch from the Review
      */
-    select?: Prisma.CartSelect<ExtArgs> | null;
+    select?: Prisma.ReviewSelect<ExtArgs> | null;
     /**
-     * Omit specific fields from the Cart
+     * Omit specific fields from the Review
      */
-    omit?: Prisma.CartOmit<ExtArgs> | null;
+    omit?: Prisma.ReviewOmit<ExtArgs> | null;
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: Prisma.CartInclude<ExtArgs> | null;
-    where?: Prisma.CartWhereInput;
+    include?: Prisma.ReviewInclude<ExtArgs> | null;
+    where?: Prisma.ReviewWhereInput;
+    orderBy?: Prisma.ReviewOrderByWithRelationInput | Prisma.ReviewOrderByWithRelationInput[];
+    cursor?: Prisma.ReviewWhereUniqueInput;
+    take?: number;
+    skip?: number;
+    distinct?: Prisma.ReviewScalarFieldEnum | Prisma.ReviewScalarFieldEnum[];
+};
+/**
+ * User.sessions
+ */
+export type User$sessionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Session
+     */
+    select?: Prisma.SessionSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the Session
+     */
+    omit?: Prisma.SessionOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.SessionInclude<ExtArgs> | null;
+    where?: Prisma.SessionWhereInput;
+    orderBy?: Prisma.SessionOrderByWithRelationInput | Prisma.SessionOrderByWithRelationInput[];
+    cursor?: Prisma.SessionWhereUniqueInput;
+    take?: number;
+    skip?: number;
+    distinct?: Prisma.SessionScalarFieldEnum | Prisma.SessionScalarFieldEnum[];
 };
 /**
  * User without action

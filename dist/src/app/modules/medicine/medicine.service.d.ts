@@ -10,6 +10,7 @@ export declare const medicineService: {
         generic_name: string | null;
         company: string;
         categoryId: string;
+        popular: boolean | null;
         strength: string | null;
         photoUrl: string | null;
         quantity: number;
@@ -18,6 +19,7 @@ export declare const medicineService: {
         Pharmacology: string | null;
         dosage: string | null;
         side_effects: string | null;
+        rating: number | null;
         warnings: string | null;
         sellerId: string;
     }>;
@@ -45,6 +47,7 @@ export declare const medicineService: {
             generic_name: string | null;
             company: string;
             categoryId: string;
+            popular: boolean | null;
             strength: string | null;
             photoUrl: string | null;
             quantity: number;
@@ -53,6 +56,7 @@ export declare const medicineService: {
             Pharmacology: string | null;
             dosage: string | null;
             side_effects: string | null;
+            rating: number | null;
             warnings: string | null;
             sellerId: string;
         })[];
@@ -72,6 +76,7 @@ export declare const medicineService: {
         generic_name: string | null;
         company: string;
         categoryId: string;
+        popular: boolean | null;
         strength: string | null;
         photoUrl: string | null;
         quantity: number;
@@ -80,6 +85,7 @@ export declare const medicineService: {
         Pharmacology: string | null;
         dosage: string | null;
         side_effects: string | null;
+        rating: number | null;
         warnings: string | null;
         sellerId: string;
     }) | null>;
@@ -92,6 +98,7 @@ export declare const medicineService: {
         generic_name: string | null;
         company: string;
         categoryId: string;
+        popular: boolean | null;
         strength: string | null;
         photoUrl: string | null;
         quantity: number;
@@ -100,6 +107,7 @@ export declare const medicineService: {
         Pharmacology: string | null;
         dosage: string | null;
         side_effects: string | null;
+        rating: number | null;
         warnings: string | null;
         sellerId: string;
     }>;

@@ -1193,6 +1193,8 @@ export declare const MedicineScalarFieldEnum: {
     readonly categoryId: "categoryId";
     readonly dosage: "dosage";
     readonly side_effects: "side_effects";
+    readonly popular: "popular";
+    readonly rating: "rating";
     readonly warnings: "warnings";
     readonly createdAt: "createdAt";
     readonly updatedAt: "updatedAt";
@@ -1205,11 +1207,11 @@ export declare const OrderScalarFieldEnum: {
     readonly dueAmount: "dueAmount";
     readonly paymentStatus: "paymentStatus";
     readonly customerId: "customerId";
-    readonly shippingAddress: "shippingAddress";
-    readonly contactNumber: "contactNumber";
     readonly status: "status";
     readonly createdAt: "createdAt";
     readonly updatedAt: "updatedAt";
+    readonly contactNumber: "contactNumber";
+    readonly shippingAddress: "shippingAddress";
 };
 export type OrderScalarFieldEnum = (typeof OrderScalarFieldEnum)[keyof typeof OrderScalarFieldEnum];
 export declare const OrderItemScalarFieldEnum: {
