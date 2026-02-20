@@ -10,6 +10,7 @@ export declare const adminService: {
         email: string;
         emailVerified: boolean;
         image: string | null;
+        phone: string | null;
     }[]>;
     updateUserStatus: (id: string, status: UserStatus) => Promise<{
         name: string | null;
@@ -21,6 +22,7 @@ export declare const adminService: {
         email: string;
         emailVerified: boolean;
         image: string | null;
+        phone: string | null;
     }>;
 };
 //# sourceMappingURL=admin.service.d.ts.map

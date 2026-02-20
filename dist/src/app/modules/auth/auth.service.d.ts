@@ -31,6 +31,7 @@ export declare const authServices: {
         email: string;
         emailVerified: boolean;
         image: string | null;
+        phone: string | null;
     }>;
     getMyProfile: (id: string) => Promise<{
         name: string | null;
@@ -42,6 +43,7 @@ export declare const authServices: {
         email: string;
         emailVerified: boolean;
         image: string | null;
+        phone: string | null;
     }>;
 };
 //# sourceMappingURL=auth.service.d.ts.map

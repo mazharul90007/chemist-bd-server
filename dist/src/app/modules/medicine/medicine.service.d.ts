@@ -62,6 +62,10 @@ export declare const medicineService: {
         })[];
     }>;
     getMedicineById: (id: string) => Promise<({
+        category: {
+            categoryName: string;
+            categoryDetails: string | null;
+        };
         seller: {
             name: string | null;
             id: string;

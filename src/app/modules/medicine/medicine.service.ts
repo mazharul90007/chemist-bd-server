@@ -88,6 +88,12 @@ const getMedicineById = async (id: string) => {
           email: true,
         },
       },
+      category: {
+        select: {
+          categoryName: true,
+          categoryDetails: true,
+        },
+      },
     },
   });
 
@@ -143,8 +149,6 @@ const removeMedicine = async (id: string, currentUser: IauthUser) => {
     where: { id },
   });
 };
-
-
 
 export const medicineService = {
   createMedicine,

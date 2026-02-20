@@ -72,6 +72,12 @@ const getMedicineById = async (id) => {
                     email: true,
                 },
             },
+            category: {
+                select: {
+                    categoryName: true,
+                    categoryDetails: true,
+                },
+            },
         },
     });
     return result;
