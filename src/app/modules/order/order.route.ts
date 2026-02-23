@@ -10,6 +10,9 @@ router.post(
   orderController.createOrderFromCart,
 );
 
+//============Get All Orders from Admin===============
+router.get("/all", auth(UserRole.ADMIN), orderController.getAllOrders);
+
 router.get("/", auth(UserRole.CUSTOMER), orderController.getMyOrders);
 router.get(
   "/seller-orders",

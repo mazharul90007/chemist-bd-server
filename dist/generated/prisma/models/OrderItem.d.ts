@@ -171,7 +171,7 @@ export type OrderItemWhereInput = {
     orderId?: Prisma.StringFilter<"OrderItem"> | string;
     medicineId?: Prisma.StringFilter<"OrderItem"> | string;
     quantity?: Prisma.IntFilter<"OrderItem"> | number;
-    unitPrice?: Prisma.IntFilter<"OrderItem"> | number;
+    unitPrice?: Prisma.FloatFilter<"OrderItem"> | number;
     medicine?: Prisma.XOR<Prisma.MedicineScalarRelationFilter, Prisma.MedicineWhereInput>;
     order?: Prisma.XOR<Prisma.OrderScalarRelationFilter, Prisma.OrderWhereInput>;
 };
@@ -192,7 +192,7 @@ export type OrderItemWhereUniqueInput = Prisma.AtLeast<{
     orderId?: Prisma.StringFilter<"OrderItem"> | string;
     medicineId?: Prisma.StringFilter<"OrderItem"> | string;
     quantity?: Prisma.IntFilter<"OrderItem"> | number;
-    unitPrice?: Prisma.IntFilter<"OrderItem"> | number;
+    unitPrice?: Prisma.FloatFilter<"OrderItem"> | number;
     medicine?: Prisma.XOR<Prisma.MedicineScalarRelationFilter, Prisma.MedicineWhereInput>;
     order?: Prisma.XOR<Prisma.OrderScalarRelationFilter, Prisma.OrderWhereInput>;
 }, "id">;
@@ -216,7 +216,7 @@ export type OrderItemScalarWhereWithAggregatesInput = {
     orderId?: Prisma.StringWithAggregatesFilter<"OrderItem"> | string;
     medicineId?: Prisma.StringWithAggregatesFilter<"OrderItem"> | string;
     quantity?: Prisma.IntWithAggregatesFilter<"OrderItem"> | number;
-    unitPrice?: Prisma.IntWithAggregatesFilter<"OrderItem"> | number;
+    unitPrice?: Prisma.FloatWithAggregatesFilter<"OrderItem"> | number;
 };
 export type OrderItemCreateInput = {
     id?: string;
@@ -235,7 +235,7 @@ export type OrderItemUncheckedCreateInput = {
 export type OrderItemUpdateInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
     quantity?: Prisma.IntFieldUpdateOperationsInput | number;
-    unitPrice?: Prisma.IntFieldUpdateOperationsInput | number;
+    unitPrice?: Prisma.FloatFieldUpdateOperationsInput | number;
     medicine?: Prisma.MedicineUpdateOneRequiredWithoutOrderItemsNestedInput;
     order?: Prisma.OrderUpdateOneRequiredWithoutOrderItemsNestedInput;
 };
@@ -244,7 +244,7 @@ export type OrderItemUncheckedUpdateInput = {
     orderId?: Prisma.StringFieldUpdateOperationsInput | string;
     medicineId?: Prisma.StringFieldUpdateOperationsInput | string;
     quantity?: Prisma.IntFieldUpdateOperationsInput | number;
-    unitPrice?: Prisma.IntFieldUpdateOperationsInput | number;
+    unitPrice?: Prisma.FloatFieldUpdateOperationsInput | number;
 };
 export type OrderItemCreateManyInput = {
     id?: string;
@@ -256,14 +256,14 @@ export type OrderItemCreateManyInput = {
 export type OrderItemUpdateManyMutationInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
     quantity?: Prisma.IntFieldUpdateOperationsInput | number;
-    unitPrice?: Prisma.IntFieldUpdateOperationsInput | number;
+    unitPrice?: Prisma.FloatFieldUpdateOperationsInput | number;
 };
 export type OrderItemUncheckedUpdateManyInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
     orderId?: Prisma.StringFieldUpdateOperationsInput | string;
     medicineId?: Prisma.StringFieldUpdateOperationsInput | string;
     quantity?: Prisma.IntFieldUpdateOperationsInput | number;
-    unitPrice?: Prisma.IntFieldUpdateOperationsInput | number;
+    unitPrice?: Prisma.FloatFieldUpdateOperationsInput | number;
 };
 export type OrderItemListRelationFilter = {
     every?: Prisma.OrderItemWhereInput;
@@ -419,7 +419,7 @@ export type OrderItemScalarWhereInput = {
     orderId?: Prisma.StringFilter<"OrderItem"> | string;
     medicineId?: Prisma.StringFilter<"OrderItem"> | string;
     quantity?: Prisma.IntFilter<"OrderItem"> | number;
-    unitPrice?: Prisma.IntFilter<"OrderItem"> | number;
+    unitPrice?: Prisma.FloatFilter<"OrderItem"> | number;
 };
 export type OrderItemCreateWithoutOrderInput = {
     id?: string;
@@ -463,20 +463,20 @@ export type OrderItemCreateManyMedicineInput = {
 export type OrderItemUpdateWithoutMedicineInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
     quantity?: Prisma.IntFieldUpdateOperationsInput | number;
-    unitPrice?: Prisma.IntFieldUpdateOperationsInput | number;
+    unitPrice?: Prisma.FloatFieldUpdateOperationsInput | number;
     order?: Prisma.OrderUpdateOneRequiredWithoutOrderItemsNestedInput;
 };
 export type OrderItemUncheckedUpdateWithoutMedicineInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
     orderId?: Prisma.StringFieldUpdateOperationsInput | string;
     quantity?: Prisma.IntFieldUpdateOperationsInput | number;
-    unitPrice?: Prisma.IntFieldUpdateOperationsInput | number;
+    unitPrice?: Prisma.FloatFieldUpdateOperationsInput | number;
 };
 export type OrderItemUncheckedUpdateManyWithoutMedicineInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
     orderId?: Prisma.StringFieldUpdateOperationsInput | string;
     quantity?: Prisma.IntFieldUpdateOperationsInput | number;
-    unitPrice?: Prisma.IntFieldUpdateOperationsInput | number;
+    unitPrice?: Prisma.FloatFieldUpdateOperationsInput | number;
 };
 export type OrderItemCreateManyOrderInput = {
     id?: string;
@@ -487,20 +487,20 @@ export type OrderItemCreateManyOrderInput = {
 export type OrderItemUpdateWithoutOrderInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
     quantity?: Prisma.IntFieldUpdateOperationsInput | number;
-    unitPrice?: Prisma.IntFieldUpdateOperationsInput | number;
+    unitPrice?: Prisma.FloatFieldUpdateOperationsInput | number;
     medicine?: Prisma.MedicineUpdateOneRequiredWithoutOrderItemsNestedInput;
 };
 export type OrderItemUncheckedUpdateWithoutOrderInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
     medicineId?: Prisma.StringFieldUpdateOperationsInput | string;
     quantity?: Prisma.IntFieldUpdateOperationsInput | number;
-    unitPrice?: Prisma.IntFieldUpdateOperationsInput | number;
+    unitPrice?: Prisma.FloatFieldUpdateOperationsInput | number;
 };
 export type OrderItemUncheckedUpdateManyWithoutOrderInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
     medicineId?: Prisma.StringFieldUpdateOperationsInput | string;
     quantity?: Prisma.IntFieldUpdateOperationsInput | number;
-    unitPrice?: Prisma.IntFieldUpdateOperationsInput | number;
+    unitPrice?: Prisma.FloatFieldUpdateOperationsInput | number;
 };
 export type OrderItemSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
     id?: boolean;
@@ -921,7 +921,7 @@ export interface OrderItemFieldRefs {
     readonly orderId: Prisma.FieldRef<"OrderItem", 'String'>;
     readonly medicineId: Prisma.FieldRef<"OrderItem", 'String'>;
     readonly quantity: Prisma.FieldRef<"OrderItem", 'Int'>;
-    readonly unitPrice: Prisma.FieldRef<"OrderItem", 'Int'>;
+    readonly unitPrice: Prisma.FieldRef<"OrderItem", 'Float'>;
 }
 /**
  * OrderItem findUnique

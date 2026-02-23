@@ -212,8 +212,8 @@ export type OrderWhereInput = {
     NOT?: Prisma.OrderWhereInput | Prisma.OrderWhereInput[];
     id?: Prisma.StringFilter<"Order"> | string;
     orderNo?: Prisma.StringFilter<"Order"> | string;
-    totalAmount?: Prisma.IntFilter<"Order"> | number;
-    dueAmount?: Prisma.IntFilter<"Order"> | number;
+    totalAmount?: Prisma.FloatFilter<"Order"> | number;
+    dueAmount?: Prisma.FloatFilter<"Order"> | number;
     paymentStatus?: Prisma.EnumPaymentStatusFilter<"Order"> | $Enums.PaymentStatus;
     customerId?: Prisma.StringFilter<"Order"> | string;
     status?: Prisma.EnumOrderStatusFilter<"Order"> | $Enums.OrderStatus;
@@ -245,8 +245,8 @@ export type OrderWhereUniqueInput = Prisma.AtLeast<{
     OR?: Prisma.OrderWhereInput[];
     NOT?: Prisma.OrderWhereInput | Prisma.OrderWhereInput[];
     orderNo?: Prisma.StringFilter<"Order"> | string;
-    totalAmount?: Prisma.IntFilter<"Order"> | number;
-    dueAmount?: Prisma.IntFilter<"Order"> | number;
+    totalAmount?: Prisma.FloatFilter<"Order"> | number;
+    dueAmount?: Prisma.FloatFilter<"Order"> | number;
     paymentStatus?: Prisma.EnumPaymentStatusFilter<"Order"> | $Enums.PaymentStatus;
     customerId?: Prisma.StringFilter<"Order"> | string;
     status?: Prisma.EnumOrderStatusFilter<"Order"> | $Enums.OrderStatus;
@@ -281,8 +281,8 @@ export type OrderScalarWhereWithAggregatesInput = {
     NOT?: Prisma.OrderScalarWhereWithAggregatesInput | Prisma.OrderScalarWhereWithAggregatesInput[];
     id?: Prisma.StringWithAggregatesFilter<"Order"> | string;
     orderNo?: Prisma.StringWithAggregatesFilter<"Order"> | string;
-    totalAmount?: Prisma.IntWithAggregatesFilter<"Order"> | number;
-    dueAmount?: Prisma.IntWithAggregatesFilter<"Order"> | number;
+    totalAmount?: Prisma.FloatWithAggregatesFilter<"Order"> | number;
+    dueAmount?: Prisma.FloatWithAggregatesFilter<"Order"> | number;
     paymentStatus?: Prisma.EnumPaymentStatusWithAggregatesFilter<"Order"> | $Enums.PaymentStatus;
     customerId?: Prisma.StringWithAggregatesFilter<"Order"> | string;
     status?: Prisma.EnumOrderStatusWithAggregatesFilter<"Order"> | $Enums.OrderStatus;
@@ -322,8 +322,8 @@ export type OrderUncheckedCreateInput = {
 export type OrderUpdateInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
     orderNo?: Prisma.StringFieldUpdateOperationsInput | string;
-    totalAmount?: Prisma.IntFieldUpdateOperationsInput | number;
-    dueAmount?: Prisma.IntFieldUpdateOperationsInput | number;
+    totalAmount?: Prisma.FloatFieldUpdateOperationsInput | number;
+    dueAmount?: Prisma.FloatFieldUpdateOperationsInput | number;
     paymentStatus?: Prisma.EnumPaymentStatusFieldUpdateOperationsInput | $Enums.PaymentStatus;
     status?: Prisma.EnumOrderStatusFieldUpdateOperationsInput | $Enums.OrderStatus;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -336,8 +336,8 @@ export type OrderUpdateInput = {
 export type OrderUncheckedUpdateInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
     orderNo?: Prisma.StringFieldUpdateOperationsInput | string;
-    totalAmount?: Prisma.IntFieldUpdateOperationsInput | number;
-    dueAmount?: Prisma.IntFieldUpdateOperationsInput | number;
+    totalAmount?: Prisma.FloatFieldUpdateOperationsInput | number;
+    dueAmount?: Prisma.FloatFieldUpdateOperationsInput | number;
     paymentStatus?: Prisma.EnumPaymentStatusFieldUpdateOperationsInput | $Enums.PaymentStatus;
     customerId?: Prisma.StringFieldUpdateOperationsInput | string;
     status?: Prisma.EnumOrderStatusFieldUpdateOperationsInput | $Enums.OrderStatus;
@@ -363,8 +363,8 @@ export type OrderCreateManyInput = {
 export type OrderUpdateManyMutationInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
     orderNo?: Prisma.StringFieldUpdateOperationsInput | string;
-    totalAmount?: Prisma.IntFieldUpdateOperationsInput | number;
-    dueAmount?: Prisma.IntFieldUpdateOperationsInput | number;
+    totalAmount?: Prisma.FloatFieldUpdateOperationsInput | number;
+    dueAmount?: Prisma.FloatFieldUpdateOperationsInput | number;
     paymentStatus?: Prisma.EnumPaymentStatusFieldUpdateOperationsInput | $Enums.PaymentStatus;
     status?: Prisma.EnumOrderStatusFieldUpdateOperationsInput | $Enums.OrderStatus;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -375,8 +375,8 @@ export type OrderUpdateManyMutationInput = {
 export type OrderUncheckedUpdateManyInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
     orderNo?: Prisma.StringFieldUpdateOperationsInput | string;
-    totalAmount?: Prisma.IntFieldUpdateOperationsInput | number;
-    dueAmount?: Prisma.IntFieldUpdateOperationsInput | number;
+    totalAmount?: Prisma.FloatFieldUpdateOperationsInput | number;
+    dueAmount?: Prisma.FloatFieldUpdateOperationsInput | number;
     paymentStatus?: Prisma.EnumPaymentStatusFieldUpdateOperationsInput | $Enums.PaymentStatus;
     customerId?: Prisma.StringFieldUpdateOperationsInput | string;
     status?: Prisma.EnumOrderStatusFieldUpdateOperationsInput | $Enums.OrderStatus;
@@ -553,8 +553,8 @@ export type OrderScalarWhereInput = {
     NOT?: Prisma.OrderScalarWhereInput | Prisma.OrderScalarWhereInput[];
     id?: Prisma.StringFilter<"Order"> | string;
     orderNo?: Prisma.StringFilter<"Order"> | string;
-    totalAmount?: Prisma.IntFilter<"Order"> | number;
-    dueAmount?: Prisma.IntFilter<"Order"> | number;
+    totalAmount?: Prisma.FloatFilter<"Order"> | number;
+    dueAmount?: Prisma.FloatFilter<"Order"> | number;
     paymentStatus?: Prisma.EnumPaymentStatusFilter<"Order"> | $Enums.PaymentStatus;
     customerId?: Prisma.StringFilter<"Order"> | string;
     status?: Prisma.EnumOrderStatusFilter<"Order"> | $Enums.OrderStatus;
@@ -605,8 +605,8 @@ export type OrderUpdateToOneWithWhereWithoutOrderItemsInput = {
 export type OrderUpdateWithoutOrderItemsInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
     orderNo?: Prisma.StringFieldUpdateOperationsInput | string;
-    totalAmount?: Prisma.IntFieldUpdateOperationsInput | number;
-    dueAmount?: Prisma.IntFieldUpdateOperationsInput | number;
+    totalAmount?: Prisma.FloatFieldUpdateOperationsInput | number;
+    dueAmount?: Prisma.FloatFieldUpdateOperationsInput | number;
     paymentStatus?: Prisma.EnumPaymentStatusFieldUpdateOperationsInput | $Enums.PaymentStatus;
     status?: Prisma.EnumOrderStatusFieldUpdateOperationsInput | $Enums.OrderStatus;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -618,8 +618,8 @@ export type OrderUpdateWithoutOrderItemsInput = {
 export type OrderUncheckedUpdateWithoutOrderItemsInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
     orderNo?: Prisma.StringFieldUpdateOperationsInput | string;
-    totalAmount?: Prisma.IntFieldUpdateOperationsInput | number;
-    dueAmount?: Prisma.IntFieldUpdateOperationsInput | number;
+    totalAmount?: Prisma.FloatFieldUpdateOperationsInput | number;
+    dueAmount?: Prisma.FloatFieldUpdateOperationsInput | number;
     paymentStatus?: Prisma.EnumPaymentStatusFieldUpdateOperationsInput | $Enums.PaymentStatus;
     customerId?: Prisma.StringFieldUpdateOperationsInput | string;
     status?: Prisma.EnumOrderStatusFieldUpdateOperationsInput | $Enums.OrderStatus;
@@ -643,8 +643,8 @@ export type OrderCreateManyCustomerInput = {
 export type OrderUpdateWithoutCustomerInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
     orderNo?: Prisma.StringFieldUpdateOperationsInput | string;
-    totalAmount?: Prisma.IntFieldUpdateOperationsInput | number;
-    dueAmount?: Prisma.IntFieldUpdateOperationsInput | number;
+    totalAmount?: Prisma.FloatFieldUpdateOperationsInput | number;
+    dueAmount?: Prisma.FloatFieldUpdateOperationsInput | number;
     paymentStatus?: Prisma.EnumPaymentStatusFieldUpdateOperationsInput | $Enums.PaymentStatus;
     status?: Prisma.EnumOrderStatusFieldUpdateOperationsInput | $Enums.OrderStatus;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -656,8 +656,8 @@ export type OrderUpdateWithoutCustomerInput = {
 export type OrderUncheckedUpdateWithoutCustomerInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
     orderNo?: Prisma.StringFieldUpdateOperationsInput | string;
-    totalAmount?: Prisma.IntFieldUpdateOperationsInput | number;
-    dueAmount?: Prisma.IntFieldUpdateOperationsInput | number;
+    totalAmount?: Prisma.FloatFieldUpdateOperationsInput | number;
+    dueAmount?: Prisma.FloatFieldUpdateOperationsInput | number;
     paymentStatus?: Prisma.EnumPaymentStatusFieldUpdateOperationsInput | $Enums.PaymentStatus;
     status?: Prisma.EnumOrderStatusFieldUpdateOperationsInput | $Enums.OrderStatus;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -669,8 +669,8 @@ export type OrderUncheckedUpdateWithoutCustomerInput = {
 export type OrderUncheckedUpdateManyWithoutCustomerInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
     orderNo?: Prisma.StringFieldUpdateOperationsInput | string;
-    totalAmount?: Prisma.IntFieldUpdateOperationsInput | number;
-    dueAmount?: Prisma.IntFieldUpdateOperationsInput | number;
+    totalAmount?: Prisma.FloatFieldUpdateOperationsInput | number;
+    dueAmount?: Prisma.FloatFieldUpdateOperationsInput | number;
     paymentStatus?: Prisma.EnumPaymentStatusFieldUpdateOperationsInput | $Enums.PaymentStatus;
     status?: Prisma.EnumOrderStatusFieldUpdateOperationsInput | $Enums.OrderStatus;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -1147,8 +1147,8 @@ export interface Prisma__OrderClient<T, Null = never, ExtArgs extends runtime.Ty
 export interface OrderFieldRefs {
     readonly id: Prisma.FieldRef<"Order", 'String'>;
     readonly orderNo: Prisma.FieldRef<"Order", 'String'>;
-    readonly totalAmount: Prisma.FieldRef<"Order", 'Int'>;
-    readonly dueAmount: Prisma.FieldRef<"Order", 'Int'>;
+    readonly totalAmount: Prisma.FieldRef<"Order", 'Float'>;
+    readonly dueAmount: Prisma.FieldRef<"Order", 'Float'>;
     readonly paymentStatus: Prisma.FieldRef<"Order", 'PaymentStatus'>;
     readonly customerId: Prisma.FieldRef<"Order", 'String'>;
     readonly status: Prisma.FieldRef<"Order", 'OrderStatus'>;

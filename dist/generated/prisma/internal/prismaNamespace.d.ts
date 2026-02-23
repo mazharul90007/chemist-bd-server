@@ -1303,6 +1303,14 @@ export type EnumCategoryStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$P
  */
 export type ListEnumCategoryStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'CategoryStatus[]'>;
 /**
+ * Reference to a field of type 'Float'
+ */
+export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>;
+/**
+ * Reference to a field of type 'Float[]'
+ */
+export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float[]'>;
+/**
  * Reference to a field of type 'MedicineType'
  */
 export type EnumMedicineTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'MedicineType'>;
@@ -1334,14 +1342,6 @@ export type EnumReviewStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$Pri
  * Reference to a field of type 'ReviewStatus[]'
  */
 export type ListEnumReviewStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ReviewStatus[]'>;
-/**
- * Reference to a field of type 'Float'
- */
-export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>;
-/**
- * Reference to a field of type 'Float[]'
- */
-export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float[]'>;
 /**
  * Batch Payload for updateMany & deleteMany & createMany
  */

@@ -1,1 +1,6 @@
-export const orderFilterableFields = ["searchTerm", "status", "paymentStatus"];
+export const orderFilterableFields = [
+    "searchTerm",
+    "status",
+    "paymentStatus",
+    "date",
+];

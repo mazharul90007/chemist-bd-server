@@ -53,13 +53,24 @@ const createOrderFromCart = async (userId, payload) => {
 };
 //===============Get My Orders==================
 const getMyOrders = async (userId, filters, options) => {
-    const { searchTerm, ...filterData } = filters;
+    const { searchTerm, date, ...filterData } = filters;
     const { page, limit, skip, sortBy, sortOrder } = calculatePagination(options);
-    //verify ownership and search by staus and payment status
+    //verify ownership and search by status, paymentStatus, and date
     const where = {
         customerId: userId,
         ...filterData,
     };
+    // Filter by a specific date (start of day to end of day)
+    if (date) {
+        const startOfDay = new Date(date);
+        startOfDay.setHours(0, 0, 0, 0);
+        const endOfDay = new Date(date);
+        endOfDay.setHours(23, 59, 59, 999);
+        where.createdAt = {
+            gte: startOfDay,
+            lte: endOfDay,
+        };
+    }
     //search by order no
     if (searchTerm) {
         where.orderNo = {
@@ -211,6 +222,65 @@ const cancelOrder = async (orderId, userId) => {
     });
     return result;
 };
+//============Get All Orders from Admin===============
+const getAllOrders = async (filters, options) => {
+    const { searchTerm, date, status, paymentStatus } = filters;
+    const { page, limit, skip, sortBy, sortOrder } = calculatePagination(options);
+    const where = {};
+    // Search by orderNo
+    if (searchTerm) {
+        where.orderNo = {
+            contains: searchTerm,
+            mode: "insensitive",
+        };
+    }
+    //Search by status
+    if (status) {
+        where.status = status;
+    }
+    //Search by paymentStatus
+    if (paymentStatus) {
+        where.paymentStatus = paymentStatus;
+    }
+    // Date filtering (specific day)
+    if (date) {
+        const startOfDay = new Date(date);
+        startOfDay.setHours(0, 0, 0, 0);
+        const endOfDay = new Date(date);
+        endOfDay.setHours(23, 59, 59, 999);
+        where.createdAt = {
+            gte: startOfDay,
+            lte: endOfDay,
+        };
+    }
+    const result = await prisma.order.findMany({
+        where,
+        skip,
+        take: limit,
+        orderBy: {
+            [sortBy]: sortOrder,
+        },
+        include: {
+            orderItems: {
+                include: {
+                    medicine: true,
+                },
+            },
+            customer: {
+                select: {
+                    id: true,
+                    name: true,
+                    email: true,
+                },
+            },
+        },
+    });
+    const total = await prisma.order.count({ where });
+    return {
+        meta: { page, limit, total },
+        data: result,
+    };
+};
 export const orderService = {
     createOrderFromCart,
     getMyOrders,
@@ -218,5 +288,6 @@ export const orderService = {
     updateOrderStatus,
     getSellerOrders,
     cancelOrder,
+    getAllOrders,
 };
 //# sourceMappingURL=order.service.js.map

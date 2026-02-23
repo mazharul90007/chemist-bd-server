@@ -6,5 +6,6 @@ export declare const orderController: {
     updateOrderStatus: (req: Request, res: Response, next: import("express").NextFunction) => Promise<void>;
     getSellerOrders: (req: Request, res: Response, next: import("express").NextFunction) => Promise<void>;
     cancelOrder: (req: Request, res: Response, next: import("express").NextFunction) => Promise<void>;
+    getAllOrders: (req: Request, res: Response, next: import("express").NextFunction) => Promise<void>;
 };
 //# sourceMappingURL=order.controller.d.ts.map

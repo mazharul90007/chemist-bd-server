@@ -102,6 +102,22 @@ const cancelOrder = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+//============Get All Orders from Admin===============
+const getAllOrders = catchAsync(async (req: Request, res: Response) => {
+  const filters = pick(req.query, orderFilterableFields);
+  const options = pick(req.query, ["page", "limit", "sortBy", "sortOrder"]);
+
+  const result = await orderService.getAllOrders(filters, options);
+
+  sendResponse(res, {
+    statusCode: status.OK,
+    success: true,
+    message: "All orders fetched successfully",
+    meta: result.meta,
+    data: result.data,
+  });
+});
+
 export const orderController = {
   createOrderFromCart,
   getMyOrders,
@@ -109,4 +125,5 @@ export const orderController = {
   updateOrderStatus,
   getSellerOrders,
   cancelOrder,
+  getAllOrders,
 };

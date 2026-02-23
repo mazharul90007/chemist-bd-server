@@ -7,7 +7,7 @@ model Medicine {
   company      String
   photoUrl     String?
   quantity     Int
-  price        Int
+  price        Float
   Indications  String?
   Pharmacology String?
   type         MedicineType     @default(OTHER)

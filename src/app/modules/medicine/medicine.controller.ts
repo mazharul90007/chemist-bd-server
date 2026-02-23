@@ -86,8 +86,30 @@ const removeMedicine = catchAsync(async (req: Request, res: Response) => {
     message: "Medicine removed successfully",
     data: null,
   });
-});
+});//================Get Seller Medicines =================
+const getSellerMedicines = catchAsync(async (req: Request, res: Response) => {
+  const sellerId = req.user?.id as string;
 
+  //extract related filters
+  const filters = pick(req.query, medicineFilterableFields);
+
+  //extract pagination options
+  const options = pick(req.query, ["page", "limit", "sortBy", "sortOrder"]);
+
+  const result = await medicineService.getSellerMedicines(
+    sellerId,
+    filters,
+    options,
+  );
+
+  sendResponse(res, {
+    statusCode: status.OK,
+    success: true,
+    message: "Seller medicines fetched successfully",
+    meta: result.meta,
+    data: result.data,
+  });
+});
 
 
 export const medicineController = {
@@ -96,4 +118,5 @@ export const medicineController = {
   getMedicineById,
   updateMedicine,
   removeMedicine,
+  getSellerMedicines,
 };

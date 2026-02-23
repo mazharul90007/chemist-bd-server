@@ -285,7 +285,7 @@ export type MedicineWhereInput = {
     company?: Prisma.StringFilter<"Medicine"> | string;
     photoUrl?: Prisma.StringNullableFilter<"Medicine"> | string | null;
     quantity?: Prisma.IntFilter<"Medicine"> | number;
-    price?: Prisma.IntFilter<"Medicine"> | number;
+    price?: Prisma.FloatFilter<"Medicine"> | number;
     Indications?: Prisma.StringNullableFilter<"Medicine"> | string | null;
     Pharmacology?: Prisma.StringNullableFilter<"Medicine"> | string | null;
     type?: Prisma.EnumMedicineTypeFilter<"Medicine"> | $Enums.MedicineType;
@@ -342,7 +342,7 @@ export type MedicineWhereUniqueInput = Prisma.AtLeast<{
     company?: Prisma.StringFilter<"Medicine"> | string;
     photoUrl?: Prisma.StringNullableFilter<"Medicine"> | string | null;
     quantity?: Prisma.IntFilter<"Medicine"> | number;
-    price?: Prisma.IntFilter<"Medicine"> | number;
+    price?: Prisma.FloatFilter<"Medicine"> | number;
     Indications?: Prisma.StringNullableFilter<"Medicine"> | string | null;
     Pharmacology?: Prisma.StringNullableFilter<"Medicine"> | string | null;
     type?: Prisma.EnumMedicineTypeFilter<"Medicine"> | $Enums.MedicineType;
@@ -399,7 +399,7 @@ export type MedicineScalarWhereWithAggregatesInput = {
     company?: Prisma.StringWithAggregatesFilter<"Medicine"> | string;
     photoUrl?: Prisma.StringNullableWithAggregatesFilter<"Medicine"> | string | null;
     quantity?: Prisma.IntWithAggregatesFilter<"Medicine"> | number;
-    price?: Prisma.IntWithAggregatesFilter<"Medicine"> | number;
+    price?: Prisma.FloatWithAggregatesFilter<"Medicine"> | number;
     Indications?: Prisma.StringNullableWithAggregatesFilter<"Medicine"> | string | null;
     Pharmacology?: Prisma.StringNullableWithAggregatesFilter<"Medicine"> | string | null;
     type?: Prisma.EnumMedicineTypeWithAggregatesFilter<"Medicine"> | $Enums.MedicineType;
@@ -470,7 +470,7 @@ export type MedicineUpdateInput = {
     company?: Prisma.StringFieldUpdateOperationsInput | string;
     photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     quantity?: Prisma.IntFieldUpdateOperationsInput | number;
-    price?: Prisma.IntFieldUpdateOperationsInput | number;
+    price?: Prisma.FloatFieldUpdateOperationsInput | number;
     Indications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     Pharmacology?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     type?: Prisma.EnumMedicineTypeFieldUpdateOperationsInput | $Enums.MedicineType;
@@ -496,7 +496,7 @@ export type MedicineUncheckedUpdateInput = {
     company?: Prisma.StringFieldUpdateOperationsInput | string;
     photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     quantity?: Prisma.IntFieldUpdateOperationsInput | number;
-    price?: Prisma.IntFieldUpdateOperationsInput | number;
+    price?: Prisma.FloatFieldUpdateOperationsInput | number;
     Indications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     Pharmacology?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     type?: Prisma.EnumMedicineTypeFieldUpdateOperationsInput | $Enums.MedicineType;
@@ -542,7 +542,7 @@ export type MedicineUpdateManyMutationInput = {
     company?: Prisma.StringFieldUpdateOperationsInput | string;
     photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     quantity?: Prisma.IntFieldUpdateOperationsInput | number;
-    price?: Prisma.IntFieldUpdateOperationsInput | number;
+    price?: Prisma.FloatFieldUpdateOperationsInput | number;
     Indications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     Pharmacology?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     type?: Prisma.EnumMedicineTypeFieldUpdateOperationsInput | $Enums.MedicineType;
@@ -563,7 +563,7 @@ export type MedicineUncheckedUpdateManyInput = {
     company?: Prisma.StringFieldUpdateOperationsInput | string;
     photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     quantity?: Prisma.IntFieldUpdateOperationsInput | number;
-    price?: Prisma.IntFieldUpdateOperationsInput | number;
+    price?: Prisma.FloatFieldUpdateOperationsInput | number;
     Indications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     Pharmacology?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     type?: Prisma.EnumMedicineTypeFieldUpdateOperationsInput | $Enums.MedicineType;
@@ -752,6 +752,13 @@ export type MedicineUncheckedUpdateManyWithoutCategoryNestedInput = {
     updateMany?: Prisma.MedicineUpdateManyWithWhereWithoutCategoryInput | Prisma.MedicineUpdateManyWithWhereWithoutCategoryInput[];
     deleteMany?: Prisma.MedicineScalarWhereInput | Prisma.MedicineScalarWhereInput[];
 };
+export type FloatFieldUpdateOperationsInput = {
+    set?: number;
+    increment?: number;
+    decrement?: number;
+    multiply?: number;
+    divide?: number;
+};
 export type EnumMedicineTypeFieldUpdateOperationsInput = {
     set?: $Enums.MedicineType;
 };
@@ -870,7 +877,7 @@ export type MedicineScalarWhereInput = {
     company?: Prisma.StringFilter<"Medicine"> | string;
     photoUrl?: Prisma.StringNullableFilter<"Medicine"> | string | null;
     quantity?: Prisma.IntFilter<"Medicine"> | number;
-    price?: Prisma.IntFilter<"Medicine"> | number;
+    price?: Prisma.FloatFilter<"Medicine"> | number;
     Indications?: Prisma.StringNullableFilter<"Medicine"> | string | null;
     Pharmacology?: Prisma.StringNullableFilter<"Medicine"> | string | null;
     type?: Prisma.EnumMedicineTypeFilter<"Medicine"> | $Enums.MedicineType;
@@ -952,7 +959,7 @@ export type MedicineUpdateWithoutCartItemsInput = {
     company?: Prisma.StringFieldUpdateOperationsInput | string;
     photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     quantity?: Prisma.IntFieldUpdateOperationsInput | number;
-    price?: Prisma.IntFieldUpdateOperationsInput | number;
+    price?: Prisma.FloatFieldUpdateOperationsInput | number;
     Indications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     Pharmacology?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     type?: Prisma.EnumMedicineTypeFieldUpdateOperationsInput | $Enums.MedicineType;
@@ -977,7 +984,7 @@ export type MedicineUncheckedUpdateWithoutCartItemsInput = {
     company?: Prisma.StringFieldUpdateOperationsInput | string;
     photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     quantity?: Prisma.IntFieldUpdateOperationsInput | number;
-    price?: Prisma.IntFieldUpdateOperationsInput | number;
+    price?: Prisma.FloatFieldUpdateOperationsInput | number;
     Indications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     Pharmacology?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     type?: Prisma.EnumMedicineTypeFieldUpdateOperationsInput | $Enums.MedicineType;
@@ -1130,7 +1137,7 @@ export type MedicineUpdateWithoutOrderItemsInput = {
     company?: Prisma.StringFieldUpdateOperationsInput | string;
     photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     quantity?: Prisma.IntFieldUpdateOperationsInput | number;
-    price?: Prisma.IntFieldUpdateOperationsInput | number;
+    price?: Prisma.FloatFieldUpdateOperationsInput | number;
     Indications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     Pharmacology?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     type?: Prisma.EnumMedicineTypeFieldUpdateOperationsInput | $Enums.MedicineType;
@@ -1155,7 +1162,7 @@ export type MedicineUncheckedUpdateWithoutOrderItemsInput = {
     company?: Prisma.StringFieldUpdateOperationsInput | string;
     photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     quantity?: Prisma.IntFieldUpdateOperationsInput | number;
-    price?: Prisma.IntFieldUpdateOperationsInput | number;
+    price?: Prisma.FloatFieldUpdateOperationsInput | number;
     Indications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     Pharmacology?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     type?: Prisma.EnumMedicineTypeFieldUpdateOperationsInput | $Enums.MedicineType;
@@ -1239,7 +1246,7 @@ export type MedicineUpdateWithoutReviewsInput = {
     company?: Prisma.StringFieldUpdateOperationsInput | string;
     photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     quantity?: Prisma.IntFieldUpdateOperationsInput | number;
-    price?: Prisma.IntFieldUpdateOperationsInput | number;
+    price?: Prisma.FloatFieldUpdateOperationsInput | number;
     Indications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     Pharmacology?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     type?: Prisma.EnumMedicineTypeFieldUpdateOperationsInput | $Enums.MedicineType;
@@ -1264,7 +1271,7 @@ export type MedicineUncheckedUpdateWithoutReviewsInput = {
     company?: Prisma.StringFieldUpdateOperationsInput | string;
     photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     quantity?: Prisma.IntFieldUpdateOperationsInput | number;
-    price?: Prisma.IntFieldUpdateOperationsInput | number;
+    price?: Prisma.FloatFieldUpdateOperationsInput | number;
     Indications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     Pharmacology?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     type?: Prisma.EnumMedicineTypeFieldUpdateOperationsInput | $Enums.MedicineType;
@@ -1308,7 +1315,7 @@ export type MedicineUpdateWithoutSellerInput = {
     company?: Prisma.StringFieldUpdateOperationsInput | string;
     photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     quantity?: Prisma.IntFieldUpdateOperationsInput | number;
-    price?: Prisma.IntFieldUpdateOperationsInput | number;
+    price?: Prisma.FloatFieldUpdateOperationsInput | number;
     Indications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     Pharmacology?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     type?: Prisma.EnumMedicineTypeFieldUpdateOperationsInput | $Enums.MedicineType;
@@ -1332,7 +1339,7 @@ export type MedicineUncheckedUpdateWithoutSellerInput = {
     company?: Prisma.StringFieldUpdateOperationsInput | string;
     photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     quantity?: Prisma.IntFieldUpdateOperationsInput | number;
-    price?: Prisma.IntFieldUpdateOperationsInput | number;
+    price?: Prisma.FloatFieldUpdateOperationsInput | number;
     Indications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     Pharmacology?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     type?: Prisma.EnumMedicineTypeFieldUpdateOperationsInput | $Enums.MedicineType;
@@ -1356,7 +1363,7 @@ export type MedicineUncheckedUpdateManyWithoutSellerInput = {
     company?: Prisma.StringFieldUpdateOperationsInput | string;
     photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     quantity?: Prisma.IntFieldUpdateOperationsInput | number;
-    price?: Prisma.IntFieldUpdateOperationsInput | number;
+    price?: Prisma.FloatFieldUpdateOperationsInput | number;
     Indications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     Pharmacology?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     type?: Prisma.EnumMedicineTypeFieldUpdateOperationsInput | $Enums.MedicineType;
@@ -1398,7 +1405,7 @@ export type MedicineUpdateWithoutCategoryInput = {
     company?: Prisma.StringFieldUpdateOperationsInput | string;
     photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     quantity?: Prisma.IntFieldUpdateOperationsInput | number;
-    price?: Prisma.IntFieldUpdateOperationsInput | number;
+    price?: Prisma.FloatFieldUpdateOperationsInput | number;
     Indications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     Pharmacology?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     type?: Prisma.EnumMedicineTypeFieldUpdateOperationsInput | $Enums.MedicineType;
@@ -1423,7 +1430,7 @@ export type MedicineUncheckedUpdateWithoutCategoryInput = {
     company?: Prisma.StringFieldUpdateOperationsInput | string;
     photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     quantity?: Prisma.IntFieldUpdateOperationsInput | number;
-    price?: Prisma.IntFieldUpdateOperationsInput | number;
+    price?: Prisma.FloatFieldUpdateOperationsInput | number;
     Indications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     Pharmacology?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     type?: Prisma.EnumMedicineTypeFieldUpdateOperationsInput | $Enums.MedicineType;
@@ -1447,7 +1454,7 @@ export type MedicineUncheckedUpdateManyWithoutCategoryInput = {
     company?: Prisma.StringFieldUpdateOperationsInput | string;
     photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     quantity?: Prisma.IntFieldUpdateOperationsInput | number;
-    price?: Prisma.IntFieldUpdateOperationsInput | number;
+    price?: Prisma.FloatFieldUpdateOperationsInput | number;
     Indications?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     Pharmacology?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     type?: Prisma.EnumMedicineTypeFieldUpdateOperationsInput | $Enums.MedicineType;
@@ -2011,7 +2018,7 @@ export interface MedicineFieldRefs {
     readonly company: Prisma.FieldRef<"Medicine", 'String'>;
     readonly photoUrl: Prisma.FieldRef<"Medicine", 'String'>;
     readonly quantity: Prisma.FieldRef<"Medicine", 'Int'>;
-    readonly price: Prisma.FieldRef<"Medicine", 'Int'>;
+    readonly price: Prisma.FieldRef<"Medicine", 'Float'>;
     readonly Indications: Prisma.FieldRef<"Medicine", 'String'>;
     readonly Pharmacology: Prisma.FieldRef<"Medicine", 'String'>;
     readonly type: Prisma.FieldRef<"Medicine", 'MedicineType'>;
