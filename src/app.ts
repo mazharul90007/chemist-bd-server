@@ -13,7 +13,7 @@ const app: Application = express();
 //parser
 app.use(
   cors({
-    origin: process.env.APP_URL || "http://localhost:3000",
+    origin: ["https://chemistbd-client.vercel.app", "http://localhost:3000"],
     credentials: true,
   }),
 );
