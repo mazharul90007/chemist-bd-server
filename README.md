@@ -11,7 +11,7 @@
 🌐 **Frontend Live URL:** [https://chemistbd-client.vercel.app](https://chemistbd-client.vercel.app)  
 🌐 **Backend Live URL:** [https://chemist-bd-server.onrender.com](https://chemist-bd-server.onrender.com)  
 🌐 **Frontend Github URL:** [https://github.com/mazharul90007/chemist-bd](https://github.com/mazharul90007/chemist-bd)  
-📚 **API Documentation:** [Postman Documentation](https://documenter.getpostman.com/view/your-link)
+📚 **API Documentation:** [Postman Documentation](https://documenter.getpostman.com/view/40157327/2sBXcGDKC2)
 
 ---
 
@@ -238,7 +238,7 @@ npm run start
 ## 📖 API Documentation
 
 For detailed API documentation, request/response examples, and testing, visit:
-**[Postman Documentation](https://documenter.getpostman.com/view/your-link)**
+**[Postman Documentation](https://documenter.getpostman.com/view/40157327/2sBXcGDKC2)**
 
 ---
 
