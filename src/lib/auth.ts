@@ -18,7 +18,11 @@ export const auth = betterAuth({
   database: prismaAdapter(prisma, {
     provider: "postgresql",
   }),
-  trustedOrigins: [process.env.APP_URL!],
+  trustedOrigins: [
+    process.env.APP_URL!,
+    "https://chemistbd-client.vercel.app",
+    "http://localhost:3000",
+  ],
   user: {
     additionalFields: {
       role: {
@@ -187,11 +191,7 @@ export const auth = betterAuth({
       }
     },
   },
-  trustedOrigin: [
-    process.env.APP_URL!,
-    "https://chemistbd-client.vercel.app",
-    "http://localhost:3000",
-  ],
+
   advanced: {
     defaultCookieAttributes: {
       sameSite: "none",
