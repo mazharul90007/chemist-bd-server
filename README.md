@@ -9,7 +9,7 @@
 **CHEMIST BD SERVER** is a full-featured backend API for a pharmacy e-commerce platform. The platform supports seamless medicine browsing, cart management, and order processing using modern backend technologies.
 
 🌐 **Frontend Live URL:** [https://chemistbd-client.vercel.app](https://chemistbd-client.vercel.app)  
-🌐 **Backend Live URL:** [https://chemistbd-server.vercel.app](https://chemistbd-server.vercel.app)  
+🌐 **Backend Live URL:** [https://chemist-bd-server.onrender.com](https://chemist-bd-server.onrender.com)  
 🌐 **Frontend Github URL:** [https://github.com/mazharul90007/chemistbd-client](https://github.com/mazharul90007/chemistbd-client)  
 📚 **API Documentation:** [Postman Documentation](https://documenter.getpostman.com/view/your-link)
 
@@ -190,32 +190,48 @@ npm run start
 
 ## 🛣️ API Endpoints
 
-### 🔑 Authentication
+### 🔑 Authentication (`/api/auth`)
 
-- `POST /api/auth/sign-up` - Register a new user.
-- `POST /api/auth/sign-in` - Authenticate and receive session.
+- `POST /sign-up` - Register a new user.
+- `POST /sign-in` - Authenticate and receive session.
+- `GET /me` - Get current user profile (Authenticated).
+- `GET /user/:id` - Get specific user details (Admin).
 
-### 💊 Medicines
+### 🏷️ Categories (`/api/v1/category`)
 
-- `GET /api/medicine` - List all medicines with filters.
-- `GET /api/medicine/:id` - Get specific medicine details.
-- `POST /api/medicine` - Create a new medicine listing.
-- `PATCH /api/medicine/:id` - Update medicine data.
-- `DELETE /api/medicine/:id` - Remove a medicine.
+- `GET /` - List all categories (Public).
+- `POST /` - Create a new category (Admin).
 
-### 🛒 Cart
+### 💊 Medicines (`/api/v1/medicine`)
 
-- `GET /api/cart` - View my persistent cart.
-- `POST /api/cart/add/:id` - Add medicine to cart.
-- `PATCH /api/cart/update-quantity/:id` - Change quantity.
-- `DELETE /api/cart/remove/:id` - Remove item from cart.
+- `GET /` - List all medicines with filters (Public).
+- `GET /:id` - Get specific medicine details (Public).
+- `POST /` - Create a new medicine listing (Seller/Admin).
+- `GET /seller-medicines` - View my medicine listings (Seller).
+- `PATCH /:id` - Update medicine data (Seller).
+- `DELETE /:id` - Remove a medicine (Seller/Admin).
 
-### 📦 Orders
+### 🛒 Cart (`/api/v1/cart`)
 
-- `POST /api/order/create` - Place an order from cart.
-- `GET /api/order` - View my order history.
-- `GET /api/order/seller-orders` - View orders for products I'm selling.
-- `PATCH /api/order/:id` - Update order status (PENDING, PAID, SHIPPED, etc.).
+- `GET /` - View my persistent cart (Customer).
+- `POST /add/:id` - Add medicine to cart (Customer).
+- `PATCH /update-quantity/:id` - Change quantity (Customer).
+- `DELETE /remove/:id` - Remove item from cart (Customer).
+
+### 📦 Orders (`/api/v1/order`)
+
+- `POST /create` - Place an order from cart (Customer).
+- `GET /` - View my order history (Customer).
+- `GET /all` - View all orders in system (Admin).
+- `GET /seller-orders` - View orders for products I'm selling (Seller).
+- `GET /:id` - Get specific order details (Customer).
+- `PATCH /:id` - Update order status (Seller/Admin).
+- `PATCH /cancel/:id` - Cancel an order (Customer).
+
+### 🛡️ Admin (`/api/v1/admin`)
+
+- `GET /users` - List all users (Admin).
+- `PATCH /users/:id` - Update user status/block user (Admin).
 
 ---
 
