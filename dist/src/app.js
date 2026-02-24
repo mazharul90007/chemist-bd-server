@@ -10,7 +10,7 @@ import router from "./app/routes";
 const app = express();
 //parser
 app.use(cors({
-    origin: process.env.APP_URL || "http://localhost:3000",
+    origin: ["https://chemistbd-client.vercel.app", "http://localhost:3000"],
     credentials: true,
 }));
 app.use(cookieParser());

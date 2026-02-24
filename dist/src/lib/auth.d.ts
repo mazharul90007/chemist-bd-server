@@ -29,6 +29,7 @@ export declare const auth: import("better-auth").Auth<{
             token: string;
         }, request: Request | undefined) => Promise<void>;
     };
+    trustedOrigin: string[];
     advanced: {
         defaultCookieAttributes: {
             sameSite: "none";

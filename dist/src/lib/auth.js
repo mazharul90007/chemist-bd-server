@@ -185,6 +185,11 @@ export const auth = betterAuth({
             }
         },
     },
+    trustedOrigin: [
+        process.env.APP_URL,
+        "https://chemistbd-client.vercel.app",
+        "http://localhost:3000",
+    ],
     advanced: {
         defaultCookieAttributes: {
             sameSite: "none",
