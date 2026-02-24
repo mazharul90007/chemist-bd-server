@@ -3,7 +3,7 @@ import catchAsync from "../../../shared/catchAsync";
 import { adminService } from "./admin.service";
 import sendResponse from "../../../shared/sendResponse";
 import status from "http-status";
-import { UserStatus } from "../../../../generated/prisma/enums";
+import { UserRole, UserStatus } from "../../../../generated/prisma/enums";
 import { userFilterableFields } from "./admin.constant";
 import pick from "../../../shared/pick";
 
@@ -26,8 +26,32 @@ const getAllUsers = catchAsync(async (req: Request, res: Response) => {
 //===============Update User Status===============
 const updateUserStatus = catchAsync(async (req: Request, res: Response) => {
   const id = req.params.id as string;
+  const currentUserId = req.user?.id as string;
   const updatedStatus = req.body.status as UserStatus;
-  const result = await adminService.updateUserStatus(id, updatedStatus);
+  const result = await adminService.updateUserStatus(
+    id,
+    currentUserId,
+    updatedStatus,
+  );
+
+  sendResponse(res, {
+    statusCode: status.OK,
+    success: true,
+    message: "User status updated successfully",
+    data: result,
+  });
+});
+
+//==============Update User Role=================
+const updateUserRole = catchAsync(async (req: Request, res: Response) => {
+  const id = req.params.id as string;
+  const updatedRole = req.body.role as UserRole;
+  const currentUserId = req.user?.id as string;
+  const result = await adminService.updateUserRole(
+    id,
+    currentUserId,
+    updatedRole,
+  );
 
   sendResponse(res, {
     statusCode: status.OK,
@@ -40,4 +64,5 @@ const updateUserStatus = catchAsync(async (req: Request, res: Response) => {
 export const adminController = {
   getAllUsers,
   updateUserStatus,
+  updateUserRole,
 };

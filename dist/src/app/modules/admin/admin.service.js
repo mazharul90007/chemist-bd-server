@@ -36,7 +36,17 @@ const getAllUsers = async (filters, options) => {
     };
 };
 //===============Update User Status===============
-const updateUserStatus = async (id, status) => {
+const updateUserStatus = async (id, currentUserId, status) => {
+    //Find the targeted User
+    const targetedUser = await prisma.user.findUnique({
+        where: { id },
+    });
+    if (!targetedUser) {
+        throw new Error("Sorry. Targeted User not found");
+    }
+    if (targetedUser.id === currentUserId) {
+        throw new Error("Sorry. You can not change your own status");
+    }
     const result = await prisma.user.update({
         where: { id },
         data: {
@@ -45,8 +55,29 @@ const updateUserStatus = async (id, status) => {
     });
     return result;
 };
+//==============Update User Role=================
+const updateUserRole = async (id, currentUserId, role) => {
+    //Find the targeted User
+    const targetedUser = await prisma.user.findUnique({
+        where: { id },
+    });
+    if (!targetedUser) {
+        throw new Error("Sorry. Targeted User not found");
+    }
+    if (targetedUser.id === currentUserId) {
+        throw new Error("Sorry. You can not change your own role");
+    }
+    const result = await prisma.user.update({
+        where: { id },
+        data: {
+            role,
+        },
+    });
+    return result;
+};
 export const adminService = {
     getAllUsers,
     updateUserStatus,
+    updateUserRole,
 };
 //# sourceMappingURL=admin.service.js.map
