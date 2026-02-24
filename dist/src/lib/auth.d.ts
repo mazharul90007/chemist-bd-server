@@ -29,5 +29,11 @@ export declare const auth: import("better-auth").Auth<{
             token: string;
         }, request: Request | undefined) => Promise<void>;
     };
+    advanced: {
+        defaultCookieAttributes: {
+            sameSite: "none";
+            secure: true;
+        };
+    };
 }>;
 //# sourceMappingURL=auth.d.ts.map

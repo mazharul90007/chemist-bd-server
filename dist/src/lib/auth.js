@@ -185,5 +185,11 @@ export const auth = betterAuth({
             }
         },
     },
+    advanced: {
+        defaultCookieAttributes: {
+            sameSite: "none",
+            secure: true,
+        },
+    },
 });
 //# sourceMappingURL=auth.js.map
