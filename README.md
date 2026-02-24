@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://expressjs.com/" target="blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/67/Node.js_logo.svg" width="120" alt="Express Logo" /></a>
+  <a href="https://res.cloudinary.com/dp6urj3gj/image/upload/v1771919199/chemistBD_ltbdsg.png" target="blank"><img src="https://res.cloudinary.com/dp6urj3gj/image/upload/v1771919199/chemistBD_ltbdsg.png" width="240" alt="Express Logo" /></a>
 </p>
 
   <p align="center">A professional pharmacy and medicine e-commerce scalable server-side application.</p>
