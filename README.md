@@ -10,7 +10,7 @@
 
 🌐 **Frontend Live URL:** [https://chemistbd-client.vercel.app](https://chemistbd-client.vercel.app)  
 🌐 **Backend Live URL:** [https://chemist-bd-server.onrender.com](https://chemist-bd-server.onrender.com)  
-🌐 **Frontend Github URL:** [https://github.com/mazharul90007/chemistbd-client](https://github.com/mazharul90007/chemistbd-client)  
+🌐 **Frontend Github URL:** [https://github.com/mazharul90007/chemist-bd](https://github.com/mazharul90007/chemist-bd)  
 📚 **API Documentation:** [Postman Documentation](https://documenter.getpostman.com/view/your-link)
 
 ---
@@ -61,7 +61,7 @@
 ## 🗂️ Entity Relationship Diagram (ERD)
 
 <p align="center">
-  <img src="https://res.cloudinary.com/dp6urj3gj/image/upload/v1739958744/medicine-diagram_nssn95.png" alt="ChemistBD ER Diagram" width="700"/>
+  <img src="https://res.cloudinary.com/dp6urj3gj/image/upload/v1771921155/chemistBd-erd_vgpt8y.png" alt="ChemistBD ER Diagram" width="700"/>
 </p>
 
 ---
